@@ -1,0 +1,4184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>May's French Carnet</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;family=Lora:ital,wght@0,400;0,500;1,400;1,500&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --lav:        #9B86C2;
+  --lav-deep:   #7560A0;
+  --lav-dark:   #4F3B7A;
+  --lav-mid:    #BCAAD9;
+  --lav-light:  #DBCDED;
+  --lav-pale:   #EDE3F5;
+  --lav-blush:  #F6F0FA;
+  --rose-dried: #C99080;
+  --rose-pale:  #F0DED4;
+  --rose-blush: #FAF1EC;
+  --sage:       #8FA784;
+  --sage-light: #C5D2BC;
+  --sage-pale:  #EBF1E6;
+  --cream:      #FBF8F4;
+  --cream-dark: #F4EFE7;
+  --cream-mid:  #E8DECF;
+  --petal:      #D8A6B4;
+  --petal-pale: #F1D9E1;
+  --ink:        #2E1F4D;
+  --ink-mid:    #4A3870;
+  --muted:      #7A6B96;
+  --muted-lt:   #A092BE;
+  --gold:       #C99A60;
+  --gold-light: #D8B484;
+  --border:     rgba(117,96,160,0.28);
+  --border-rose:rgba(201,144,128,0.28);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* iOS Safari: prevent auto-zoom on focused inputs by guaranteeing 16px font-size.
+   Applies via touch-device media query so desktop layouts keep their smaller styles. */
+@media (hover: none) and (pointer: coarse) {
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="search"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+body {
+  font-family: 'Lora', serif;
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ═══════════════════════════════════════
+   DECORATIVE SVG BOTANICALS
+═══════════════════════════════════════ */
+.botanical-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.botanical-bg svg {
+  position: absolute;
+  opacity: 0.07;
+}
+.botanical-bg .b1 { top: -40px; right: -30px; width: 320px; opacity: 0.09; }
+.botanical-bg .b2 { bottom: -60px; left: -40px; width: 280px; opacity: 0.07; transform: scaleX(-1) rotate(15deg); }
+.botanical-bg .b3 { top: 40%; right: -20px; width: 160px; opacity: 0.05; transform: rotate(-20deg); }
+
+/* ═══════════════════════════════════════
+   HEADER
+═══════════════════════════════════════ */
+.header {
+  background: linear-gradient(160deg, #A28BC9 0%, #7E68A8 55%, #5A4682 100%);
+  text-align: center;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(217,168,154,0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(163,184,154,0.12) 0%, transparent 50%);
+  pointer-events: none;
+}
+/* Botanical corners in header */
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 200px; height: 200px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg opacity='0.15'%3E%3Cellipse cx='175' cy='25' rx='8' ry='12' fill='%23C4876A'/%3E%3Cellipse cx='185' cy='32' rx='7' ry='11' fill='%23D4A080' transform='rotate(60 185 32)'/%3E%3Cellipse cx='180' cy='42' rx='7' ry='11' fill='%23C4876A' transform='rotate(120 180 42)'/%3E%3Cellipse cx='170' cy='42' rx='7' ry='11' fill='%23D4A080' transform='rotate(180 170 42)'/%3E%3Cellipse cx='165' cy='32' rx='7' ry='11' fill='%23C4876A' transform='rotate(240 165 32)'/%3E%3Ccircle cx='175' cy='33' r='4' fill='%23B8704A'/%3E%3Cellipse cx='140' cy='60' rx='6' ry='9' fill='%23C4876A'/%3E%3Cellipse cx='148' cy='65' rx='5' ry='8' fill='%23D4A080' transform='rotate(72 148 65)'/%3E%3Cellipse cx='144' cy='73' rx='5' ry='8' fill='%23C4876A' transform='rotate(144 144 73)'/%3E%3Cellipse cx='136' cy='73' rx='5' ry='8' fill='%23D4A080' transform='rotate(216 136 73)'/%3E%3Cellipse cx='132' cy='65' rx='5' ry='8' fill='%23C4876A' transform='rotate(288 132 65)'/%3E%3Ccircle cx='140' cy='67' r='3' fill='%23B8704A'/%3E%3Cpath d='M 140 67 Q 125 95 110 125' stroke='%237A9070' stroke-width='1.3' fill='none' opacity='0.65'/%3E%3Cellipse cx='123' cy='88' rx='8' ry='5' fill='%237A9070' opacity='0.55' transform='rotate(-25 123 88)'/%3E%3Cellipse cx='115' cy='112' rx='7' ry='4' fill='%237A9070' opacity='0.45' transform='rotate(35 115 112)'/%3E%3Cellipse cx='162' cy='88' rx='4' ry='7' fill='%23D4A080' opacity='0.7' transform='rotate(15 162 88)'/%3E%3Cpath d='M 162 88 L 158 105' stroke='%237A9070' stroke-width='1' opacity='0.5'/%3E%3C/g%3E%3C/svg%3E") no-repeat;
+  pointer-events: none;
+}
+.header-top-ribbon {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--lav-mid), var(--rose-dried), var(--lav-mid), transparent);
+  opacity: 0.7;
+}
+.header-inner {
+  padding: 2.5rem 1.5rem 0;
+  position: relative;
+  z-index: 1;
+}
+.header-botanical-row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  opacity: 0.55;
+}
+.header-botanical-svg {
+  width: 48px;
+  height: 48px;
+}
+.header-botanical-svg.mirror {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.header-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #FBF6FF;
+  opacity: 1;
+  margin-bottom: 0.6rem;
+  font-weight: 400;
+  text-shadow: 0 1px 2px rgba(44,31,77,0.35);
+}
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.05;
+  margin-bottom: 0.3rem;
+}
+.header h1 em {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--lav-light);
+}
+.header-tagline {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: rgba(251,246,255,0.92);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(44,31,77,0.35);
+}
+.header-petal-row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  padding-bottom: 0;
+  opacity: 0.45;
+}
+.petal-line {
+  -webkit-flex: 1;
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--lav-mid));
+}
+.petal-line.r { background: linear-gradient(90deg, var(--lav-mid), transparent); }
+.petal-center {
+  font-size: 14px;
+  color: var(--lav-light);
+  margin: 0 10px;
+  letter-spacing: 5px;
+}
+
+/* ═══════════════════════════════════════
+   TABS — feel like ribbon bookmarks
+═══════════════════════════════════════ */
+.tabs {
+  background: rgba(79,59,122,0.96);
+  display: -webkit-flex;
+  display: flex;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+.tab-btn {
+  -webkit-flex: 1;
+  flex: 1;
+  padding: 0.85rem 0.35rem 0.8rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: rgba(255,255,255,0.82);
+  font-family: 'Lora', serif;
+  font-size: 11.5px;
+  font-style: italic;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  text-transform: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: color 0.25s, border-color 0.25s;
+  transition: color 0.25s, border-color 0.25s;
+  font-weight: 400;
+}
+.tab-btn:hover { color: rgba(255,255,255,0.95); }
+.tab-btn.active { color: #FFFFFF; border-bottom-color: var(--lav-pale); font-weight: 500; }
+
+/* ═══════════════════════════════════════
+   MAIN
+═══════════════════════════════════════ */
+.main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 5rem;
+  position: relative;
+  z-index: 1;
+}
+.section { display: none; }
+.section.active { display: block; }
+
+/* ═══════════════════════════════════════
+   SECTION HEADERS — romantic not clinical
+═══════════════════════════════════════ */
+.section-head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--lav-dark);
+  margin-bottom: 0.2rem;
+}
+.section-sub {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--muted-lt);
+}
+.petal-divider {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  margin: 0.5rem 0 0;
+}
+.pd-line {
+  -webkit-flex: 1;
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border));
+}
+.pd-line.r { background: linear-gradient(90deg, var(--border), transparent); }
+.pd-mark {
+  font-size: 11px;
+  color: var(--lav);
+  margin: 0 10px;
+  letter-spacing: 5px;
+  opacity: 0.6;
+}
+
+/* ═══════════════════════════════════════
+   SEARCH — soft and poetic
+═══════════════════════════════════════ */
+.search-wrap { position: relative; margin-bottom: 2rem; }
+.search-input {
+  width: 100%;
+  padding: 1rem 1.35rem;
+  padding-right: 8rem;
+  font-family: 'Lora', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  background: var(--cream-dark);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  color: var(--ink);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: border-color 0.25s, box-shadow 0.25s;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  box-shadow: inset 0 1px 4px rgba(44,31,61,0.06);
+}
+.search-input:focus {
+  border-color: var(--lav);
+  box-shadow: 0 0 0 3px rgba(155,139,180,0.12), inset 0 1px 4px rgba(44,31,61,0.04);
+}
+.search-input::placeholder { color: var(--muted-lt); opacity: 0.7; font-style: italic; }
+.search-btn {
+  position: absolute;
+  right: 4px; top: 4px; bottom: 4px;
+  padding: 0 1.4rem;
+  background: linear-gradient(135deg, var(--lav-deep), var(--lav-dark));
+  border: none;
+  border-radius: 28px;
+  color: var(--lav-pale);
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.search-btn:hover { opacity: 0.88; }
+
+/* ═══════════════════════════════════════
+   LOADING — gentle petals
+═══════════════════════════════════════ */
+.loading { display: none; text-align: center; padding: 3rem 0; }
+.loading.active { display: block; }
+.loading-petals { display: -webkit-inline-flex; display: inline-flex; -webkit-align-items: center; align-items: center; }
+.loading-petals span {
+  font-size: 18px; margin: 0 4px;
+  -webkit-animation: floatpetal 1.6s ease-in-out infinite;
+  animation: floatpetal 1.6s ease-in-out infinite;
+  display: inline-block;
+}
+.loading-petals span:nth-child(2) { -webkit-animation-delay:0.3s; animation-delay:0.3s; }
+.loading-petals span:nth-child(3) { -webkit-animation-delay:0.6s; animation-delay:0.6s; }
+@-webkit-keyframes floatpetal {
+  0%,100%{-webkit-transform:translateY(0) rotate(-5deg);transform:translateY(0) rotate(-5deg);opacity:0.4;}
+  50%{-webkit-transform:translateY(-8px) rotate(5deg);transform:translateY(-8px) rotate(5deg);opacity:1;}
+}
+@keyframes floatpetal {
+  0%,100%{transform:translateY(0) rotate(-5deg);opacity:0.4;}
+  50%{transform:translateY(-8px) rotate(5deg);opacity:1;}
+}
+.loading-text {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════════════════════════════════
+   ERROR
+═══════════════════════════════════════ */
+.error-card {
+  background: #FFF5F5;
+  border: 1px solid var(--rose-pale);
+  border-radius: 12px;
+  padding: 1.1rem 1.35rem;
+  color: #8A3040;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  display: none;
+}
+.error-card.active { display: block; }
+
+/* ═══════════════════════════════════════
+   RESULT CARD — not a dictionary card,
+   feels like a love letter / journal page
+═══════════════════════════════════════ */
+.result-card {
+  display: none;
+  -webkit-animation: riseUp 0.5s ease;
+  animation: riseUp 0.5s ease;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.result-card.active { display: block; }
+@-webkit-keyframes riseUp {
+  from { opacity:0; -webkit-transform:translateY(16px); transform:translateY(16px); }
+  to   { opacity:1; -webkit-transform:translateY(0);    transform:translateY(0); }
+}
+@keyframes riseUp {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* Watercolour-wash card */
+.result-card-paper {
+  background: var(--cream-dark);
+  background-image:
+    radial-gradient(ellipse at 90% 10%, rgba(155,139,180,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 90%, rgba(196,135,106,0.08) 0%, transparent 50%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem 2rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 30px rgba(44,31,61,0.1), 0 1px 4px rgba(44,31,61,0.06);
+}
+/* Botanical corner decoration */
+.result-card-paper::before {
+  content: '';
+  position: absolute;
+  top: -10px; right: -10px;
+  width: 120px; height: 120px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg opacity='0.18' fill='%239B8BB4'%3E%3Cellipse cx='100' cy='10' rx='5' ry='16' transform='rotate(-25 100 10)'/%3E%3Cellipse cx='85' cy='20' rx='4' ry='12' transform='rotate(-40 85 20)'/%3E%3Cellipse cx='108' cy='30' rx='4' ry='11' transform='rotate(-55 108 30)'/%3E%3Cellipse cx='95' cy='5' rx='3' ry='9' transform='rotate(-15 95 5)'/%3E%3Cline x1='95' y1='15' x2='70' y2='55' stroke='%239B8BB4' stroke-width='1' opacity='0.4'/%3E%3Cline x1='85' y1='18' x2='65' y2='50' stroke='%239B8BB4' stroke-width='0.8' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E") no-repeat;
+  pointer-events: none;
+}
+.result-card-paper::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: -5px;
+  width: 90px; height: 90px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 90'%3E%3Cg opacity='0.12' fill='%23C4876A'%3E%3Cellipse cx='15' cy='80' rx='4' ry='13' transform='rotate(20 15 80)'/%3E%3Cellipse cx='30' cy='75' rx='3' ry='10' transform='rotate(35 30 75)'/%3E%3Cellipse cx='8' cy='65' rx='3' ry='9' transform='rotate(10 8 65)'/%3E%3Cline x1='18' y1='72' x2='45' y2='45' stroke='%23C4876A' stroke-width='0.8' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E") no-repeat;
+  pointer-events: none;
+}
+
+/* Word as a romantic headline */
+.r-word-section { margin-bottom: 1.25rem; }
+.r-word {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--lav-dark);
+  line-height: 1;
+  margin-bottom: 0.1rem;
+}
+.r-word-english {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+.r-phonetic {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  color: var(--muted-lt);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.65rem;
+}
+.r-meta-row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.r-meta-row > * { margin-right: 6px; margin-bottom: 5px; }
+
+/* ═══════════════════════════════════════
+   BADGES — soft pill style
+═══════════════════════════════════════ */
+.badge {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.badge-masc { background: #DDE8F5; color: #2A4E7A; }
+.badge-fem  { background: var(--petal-pale); color: #8A3060; }
+.badge-none { background: var(--lav-pale); color: var(--lav-deep); }
+.badge-pos  { background: var(--cream-mid); color: var(--muted); border: 1px solid rgba(155,139,180,0.15); }
+.badge-cat  { background: var(--sage-pale); color: var(--sage); }
+.badge-src  { background: var(--sage-pale); color: var(--sage); font-size: 8px; }
+
+.speak-btn {
+  background: var(--lav-pale);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 36px; height: 36px;
+  cursor: pointer;
+  font-size: 14px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: background 0.2s, -webkit-transform 0.15s;
+  transition: background 0.2s, transform 0.15s;
+  margin-left: auto;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+.speak-btn:hover { background: var(--lav-light); }
+.speak-btn:active { -webkit-transform: scale(0.88); transform: scale(0.88); }
+
+/* Gentle wavy divider */
+.wave-divider {
+  text-align: center;
+  color: var(--lav);
+  font-size: 13px;
+  letter-spacing: 6px;
+  opacity: 0.35;
+  margin: 1.1rem 0;
+  line-height: 1;
+}
+
+/* Meaning section — soft background wash */
+.r-meaning {
+  background: var(--lav-blush);
+  border-left: 2px solid var(--lav-mid);
+  border-radius: 0 10px 10px 0;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.1rem;
+}
+.r-meaning-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--lav);
+  margin-bottom: 0.25rem;
+  opacity: 0.8;
+}
+.r-meaning-text {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  color: var(--ink-mid);
+  line-height: 1.65;
+}
+.r-meaning-en {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+  line-height: 1.5;
+}
+
+/* Example sentence */
+.r-example {
+  background: var(--rose-blush);
+  border-left: 2px solid var(--rose-dried);
+  border-radius: 0 10px 10px 0;
+  padding: 0.85rem 1.1rem;
+  margin-bottom: 1.1rem;
+  opacity: 0.95;
+}
+.r-example-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--rose-dried);
+  margin-bottom: 0.2rem;
+  opacity: 0.75;
+}
+.r-example-fr {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.65;
+  margin-bottom: 0.3rem;
+}
+.r-example-en {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Gender label — prominent display */
+.r-gender-label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* Source label */
+.r-source-badge {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--sage);
+  opacity: 0.7;
+  margin-bottom: 0.75rem;
+  display: none;
+}
+
+/* Save button — ribbon style */
+.save-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, var(--lav-deep), var(--lav-dark));
+  color: var(--lav-pale);
+  border: none;
+  border-radius: 30px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.1s;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.save-btn:hover { opacity: 0.88; }
+.save-btn:active { -webkit-transform: scale(0.99); transform: scale(0.99); }
+
+/* ═══════════════════════════════════════
+   VOCAB BANK FORM — feels like a journal
+═══════════════════════════════════════ */
+.form-card {
+  background: var(--cream-dark);
+  background-image: radial-gradient(ellipse at 85% 15%, rgba(155,139,180,0.1) 0%, transparent 50%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(44,31,61,0.08);
+}
+.form-row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.form-row > * { margin-right: 12px; margin-bottom: 14px; }
+.form-row > *:last-child { margin-right: 0; }
+.fg { display: -webkit-flex; display: flex; -webkit-flex-direction: column; flex-direction: column; }
+.fg.half  { -webkit-flex: 1 1 155px; flex: 1 1 155px; }
+.fg.third { -webkit-flex: 1 1 110px; flex: 1 1 110px; }
+.fg.full  { -webkit-flex: 1 1 100%;  flex: 1 1 100%; margin-right: 0 !important; }
+
+label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--muted-lt);
+  margin-bottom: 5px;
+}
+input[type="text"], select, textarea {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input[type="text"]:focus, select:focus, textarea:focus {
+  border-color: var(--lav);
+  box-shadow: 0 0 0 3px rgba(155,139,180,0.1);
+}
+input[type="text"]::placeholder { color: var(--muted-lt); opacity: 0.6; font-style: italic; }
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239B8BB4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 2rem;
+  cursor: pointer;
+}
+textarea { resize: vertical; min-height: 72px; line-height: 1.65; font-style: italic; }
+
+.add-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, var(--lav-deep), var(--lav-dark));
+  color: var(--lav-pale);
+  border: none;
+  border-radius: 30px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.1s;
+  transition: opacity 0.2s, transform 0.1s;
+  margin-top: 4px;
+}
+.add-btn:hover { opacity: 0.88; }
+.add-btn:active { -webkit-transform: scale(0.99); transform: scale(0.99); }
+
+/* ═══════════════════════════════════════
+   FILTER BAR
+═══════════════════════════════════════ */
+.filter-bar {
+  background: var(--cream-dark);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.filter-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--muted-lt);
+  display: block;
+  margin-bottom: 0.7rem;
+}
+.filter-row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.filter-row > * { margin-right: 8px; margin-bottom: 8px; }
+.filter-row > *:last-child { margin-right: 0; }
+.f-search { -webkit-flex: 2 1 150px; flex: 2 1 150px; }
+.f-sel    { -webkit-flex: 1 1 100px; flex: 1 1 100px; }
+.f-search input, .f-sel select {
+  width: 100%;
+  font-size: 0.88rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 20px;
+}
+.f-sel select { padding-right: 2rem; }
+
+/* ═══════════════════════════════════════
+   VOCAB CARDS — pressed flower feeling
+═══════════════════════════════════════ */
+.vocab-count {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--muted-lt);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.vocab-empty { text-align: center; padding: 3rem 1rem; }
+.vocab-empty p {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--muted-lt);
+}
+
+.vocab-card {
+  background: var(--cream-dark);
+  background-image: radial-gradient(ellipse at 80% 20%, rgba(155,139,180,0.1) 0%, transparent 50%);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 3px 14px rgba(44,31,61,0.07);
+  -webkit-animation: riseUp 0.35s ease;
+  animation: riseUp 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+.vocab-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--lav-light), var(--petal), var(--lav-light));
+  opacity: 0.6;
+  border-radius: 14px 14px 0 0;
+}
+.vocab-card-top {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+.vocab-word-row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.vocab-word {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--lav-dark);
+  margin-right: 8px;
+  line-height: 1;
+}
+.vocab-speak {
+  background: none;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  color: var(--lav);
+  opacity: 0.5;
+  padding: 3px;
+  -webkit-transition: opacity 0.15s;
+  transition: opacity 0.15s;
+}
+.vocab-speak:hover { opacity: 1; }
+.vocab-delete {
+  background: none;
+  border: 1px solid rgba(155,139,180,0.2);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted-lt);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
+}
+.vocab-delete:hover { background: var(--rose-pale); color: #8A3040; }
+
+.vocab-badges { display: -webkit-flex; display: flex; -webkit-flex-wrap: wrap; flex-wrap: wrap; margin-bottom: 0.6rem; }
+.vocab-badges > * { margin-right: 5px; margin-bottom: 4px; }
+
+.vocab-trans {
+  font-family: 'Lora', serif;
+  font-size: 0.92rem;
+  color: var(--ink-mid);
+  margin-bottom: 0.55rem;
+  line-height: 1.5;
+}
+.vocab-phonetic {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  color: var(--muted-lt);
+  margin-bottom: 0.55rem;
+  letter-spacing: 0.3px;
+}
+.vocab-note {
+  background: var(--lav-blush);
+  border-left: 2px solid var(--lav-light);
+  border-radius: 0 8px 8px 0;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 0.75rem;
+}
+.vocab-note-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--lav);
+  margin-bottom: 0.2rem;
+  opacity: 0.7;
+}
+.vocab-note-text {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--ink-mid);
+  line-height: 1.6;
+}
+.vocab-quote-section {
+  border-top: 1px dashed rgba(155,139,180,0.25);
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+}
+.vocab-date {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  color: var(--muted-lt);
+  opacity: 0.4;
+  letter-spacing: 1px;
+  text-align: right;
+  margin-top: 0.65rem;
+}
+
+/* ═══════════════════════════════════════
+   JOURNAL — pensée du jour (quote card)
+═══════════════════════════════════════ */
+.pensee-card {
+  background: var(--cream-dark);
+  background-image:
+    radial-gradient(ellipse at 90% 0%, rgba(196,135,106,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 100%, rgba(155,139,180,0.10) 0%, transparent 55%);
+  border: 1px solid var(--border-rose);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 18px rgba(44,31,61,0.07);
+  position: relative;
+  overflow: hidden;
+}
+.pensee-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--rose-dried), var(--lav-mid), transparent);
+  opacity: 0.55;
+}
+.pensee-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--rose-dried);
+  opacity: 0.85;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+.pensee-open {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  color: var(--rose-dried);
+  opacity: 0.55;
+  line-height: 0.5;
+  display: block;
+  text-align: left;
+  margin-bottom: 0.2rem;
+}
+.pensee-fr {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--ink-mid);
+  line-height: 1.55;
+  margin-bottom: 0.5rem;
+}
+.pensee-en {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: 0.7rem;
+}
+.pensee-source {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--lav-deep);
+  text-align: right;
+  opacity: 0.8;
+}
+.pensee-source::before {
+  content: '— ';
+  opacity: 0.7;
+}
+.pensee-refresh {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: 0.85rem;
+  display: block;
+  margin-left: auto;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+.pensee-refresh:hover { background: var(--lav-pale); }
+
+/* ═══════════════════════════════════════
+   LIVRE DU JOUR — book of the day
+═══════════════════════════════════════ */
+.livre-card {
+  background: var(--cream-dark);
+  background-image:
+    radial-gradient(ellipse at 90% 0%, rgba(163,184,154,0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 100%, rgba(217,168,154,0.10) 0%, transparent 55%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 18px rgba(44,31,61,0.07);
+  position: relative;
+  overflow: hidden;
+}
+.livre-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--sage), var(--rose-dried), transparent);
+  opacity: 0.55;
+}
+.livre-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--sage);
+  opacity: 0.9;
+  margin-bottom: 0.85rem;
+  text-align: center;
+}
+.livre-body {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+.livre-cover {
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  width: 78px;
+  height: 116px;
+  margin-right: 1.1rem;
+  border-radius: 4px;
+  background: var(--lav-pale);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 12px rgba(44,31,61,0.18), 0 1px 3px rgba(44,31,61,0.1);
+  position: relative;
+  overflow: hidden;
+}
+.livre-cover.no-img::after {
+  content: '📖';
+  position: absolute;
+  inset: 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  font-size: 28px;
+  opacity: 0.5;
+}
+.livre-info { -webkit-flex: 1; flex: 1; min-width: 0; }
+.livre-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--lav-dark);
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+.livre-author {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 0.55rem;
+}
+.livre-author::before { content: '— '; opacity: 0.7; }
+.livre-desc {
+  font-family: 'Lora', serif;
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+  line-height: 1.6;
+}
+.livre-meta {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-top: 0.6rem;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.livre-meta > span {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--muted-lt);
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+.livre-refresh {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: 0.9rem;
+  display: block;
+  margin-left: auto;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+.livre-refresh:hover { background: var(--sage-pale); }
+
+/* ═══════════════════════════════════════
+   JOURNAL
+═══════════════════════════════════════ */
+.journal-card {
+  background: var(--cream-dark);
+  background-image: radial-gradient(ellipse at 80% 10%, rgba(155,139,180,0.12) 0%, transparent 55%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.85rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(44,31,61,0.08);
+}
+.journal-date-line {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--muted-lt);
+  margin-bottom: 1.25rem;
+}
+.mood-row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.mood-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--muted-lt);
+  margin-right: 10px;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+.mood-btn {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 8px 12px;
+  min-width: 40px;
+  min-height: 38px;
+  font-size: 17px;
+  cursor: pointer;
+  margin-right: 5px;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: background 0.15s, -webkit-transform 0.1s;
+  transition: background 0.15s, transform 0.1s;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+.mood-btn:hover { background: var(--lav-pale); }
+.mood-btn.selected {
+  background: var(--lav-pale);
+  border-color: var(--lav);
+  -webkit-transform: scale(1.12);
+  transform: scale(1.12);
+}
+.journal-hint {
+  background: var(--lav-blush);
+  border-left: 2px solid var(--lav-light);
+  border-radius: 0 10px 10px 0;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.1rem;
+}
+.journal-hint-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--lav);
+  margin-bottom: 0.2rem;
+  opacity: 0.8;
+  display: block;
+}
+.journal-hint-text {
+  display: block;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--ink-mid);
+  line-height: 1.6;
+}
+.journal-hint-en {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  color: var(--muted-lt);
+  margin-top: 0.2rem;
+  font-style: italic;
+}
+.journal-textarea {
+  width: 100%;
+  min-height: 260px;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--ink);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  outline: none;
+  resize: vertical;
+  line-height: 1.85;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-bottom: 0.85rem;
+  display: block;
+}
+
+/* Category pills — feel like the mood row */
+.cat-row {
+  margin-bottom: 1.1rem;
+}
+.cat-pills {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.cat-btn {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 9px 14px;
+  min-height: 36px;
+  font-family: 'Lora', serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--muted);
+  cursor: pointer;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: background 0.15s, color 0.15s, border-color 0.15s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  line-height: 1;
+}
+.cat-btn .cat-emoji { font-size: 13px; margin-right: 6px; font-style: normal; }
+.cat-btn:hover { background: var(--lav-pale); color: var(--lav-dark); }
+.cat-btn.selected {
+  background: var(--lav-pale);
+  border-color: var(--lav);
+  color: var(--lav-dark);
+  font-weight: 500;
+}
+
+/* Optional title input above the textarea */
+.journal-title-input {
+  width: 100%;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 0.5rem 0.2rem 0.6rem;
+  outline: none;
+  margin-bottom: 1rem;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+.journal-title-input:focus { border-bottom-color: var(--lav); }
+.journal-title-input::placeholder { color: var(--muted-lt); opacity: 0.6; }
+
+/* Saved entry — category badge + title */
+.je-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--lav-dark);
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+.je-cat {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  -webkit-align-items: center;
+  align-items: center;
+  background: var(--lav-pale);
+  color: var(--lav-dark);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.je-cat .cat-emoji { font-size: 11px; margin-right: 5px; }
+.journal-textarea:focus {
+  border-color: var(--lav);
+  box-shadow: 0 0 0 3px rgba(155,139,180,0.1);
+}
+.journal-textarea::placeholder { color: var(--muted-lt); opacity: 0.6; }
+.journal-bottom-row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.journal-bottom-row > * { margin-right: 10px; }
+.journal-bottom-row > *:last-child { margin-right: 0; }
+.journal-save-btn {
+  -webkit-flex: 1;
+  flex: 1;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, var(--lav-deep), var(--lav-dark));
+  color: var(--lav-pale);
+  border: none;
+  border-radius: 30px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.journal-save-btn:hover { opacity: 0.88; }
+.journal-new-prompt {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.8rem 1rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.journal-new-prompt:hover { background: var(--lav-pale); }
+.journal-entries-label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--muted-lt);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.journal-entry {
+  background: var(--cream-dark);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--lav-light);
+  border-radius: 0 12px 12px 0;
+  padding: 1.1rem 1.35rem;
+  margin-bottom: 0.9rem;
+  -webkit-animation: riseUp 0.3s ease;
+  animation: riseUp 0.3s ease;
+}
+.je-meta {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+.je-date { font-family: 'Jost', sans-serif; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted-lt); }
+.je-mood { font-size: 15px; }
+.je-text { font-family: 'Lora', serif; font-style: italic; font-size: 1rem; color: var(--ink-mid); line-height: 1.75; margin-bottom: 0.5rem; }
+.je-delete { background: none; border: none; font-family: 'Jost', sans-serif; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-lt); cursor: pointer; -webkit-appearance: none; appearance: none; opacity: 0.4; padding: 0; }
+.je-delete:hover { opacity: 0.9; color: #8A3040; }
+
+/* ═══════════════════════════════════════
+   TOAST
+═══════════════════════════════════════ */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(16px);
+  transform: translateX(-50%) translateY(16px);
+  background: var(--lav-dark);
+  color: var(--lav-pale);
+  padding: 0.65rem 1.5rem;
+  border-radius: 30px;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+  white-space: nowrap;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.toast.show { opacity: 1; -webkit-transform: translateX(-50%) translateY(0); transform: translateX(-50%) translateY(0); }
+
+/* ═══════════════════════════════════════
+   BOOK JOURNAL — Mon Carnet de Lecture
+═══════════════════════════════════════ */
+.bj-section-divider {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0 1.5rem;
+}
+.bj-section-divider .pd-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--border)); }
+.bj-section-divider .pd-line.r { background: linear-gradient(90deg, var(--border), transparent); }
+.bj-section-divider-label {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--lav-dark);
+  margin: 0 1rem;
+  white-space: nowrap;
+}
+
+/* The add-book form card */
+.bj-form-card {
+  background: var(--cream-dark);
+  background-image:
+    radial-gradient(ellipse at 85% 10%, rgba(163,184,154,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(155,139,180,0.09) 0%, transparent 55%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(44,31,61,0.08);
+  position: relative;
+  overflow: hidden;
+}
+.bj-form-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--sage-light), var(--petal), transparent);
+  opacity: 0.7;
+}
+.bj-form-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--lav-dark);
+  margin-bottom: 1.1rem;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+/* Star rating picker */
+.bj-stars-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+.bj-stars-row label {
+  margin-bottom: 7px;
+}
+.star-picker {
+  display: flex;
+  gap: 6px;
+}
+.star-picker span {
+  font-size: 26px;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+  opacity: 0.25;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  padding: 6px 4px;
+  min-width: 32px;
+  display: inline-block;
+  text-align: center;
+}
+.star-picker span.lit { opacity: 1; }
+.star-picker span:hover { transform: scale(1.2); }
+
+/* Feeling tags */
+.bj-feeling-row {
+  margin-bottom: 14px;
+}
+.bj-feeling-row label { display: block; margin-bottom: 7px; }
+.bj-feelings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.bj-feeling-btn {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 13px;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--muted);
+  cursor: pointer;
+  appearance: none;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.bj-feeling-btn.selected {
+  background: var(--lav-pale);
+  border-color: var(--lav-mid);
+  color: var(--lav-dark);
+}
+
+/* Would re-read toggle */
+.bj-reread-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.bj-reread-row label { margin-bottom: 0; cursor: pointer; }
+.bj-toggle {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.bj-toggle input { opacity: 0; width: 0; height: 0; }
+.bj-toggle-track {
+  position: absolute; inset: 0;
+  background: var(--cream-mid);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.bj-toggle input:checked + .bj-toggle-track { background: var(--lav-mid); border-color: var(--lav); }
+.bj-toggle-track::after {
+  content: '';
+  position: absolute;
+  left: 3px; top: 3px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 1px 3px rgba(44,31,61,0.25);
+  transition: left 0.2s;
+}
+.bj-toggle input:checked + .bj-toggle-track::after { left: 19px; }
+.bj-reread-label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Add button */
+.bj-add-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, var(--sage), #6A8A62);
+  color: #F6FAF4;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  appearance: none;
+  transition: opacity 0.2s, transform 0.1s;
+  margin-top: 4px;
+}
+.bj-add-btn:hover { opacity: 0.88; }
+.bj-add-btn:active { transform: scale(0.99); }
+
+/* Book log count */
+.bj-count {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--muted-lt);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Individual read book card */
+.bj-card {
+  background: var(--cream-dark);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 3px 14px rgba(44,31,61,0.07);
+  animation: riseUp 0.35s ease;
+  overflow: hidden;
+  position: relative;
+}
+.bj-card-accent {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--sage-light), var(--petal), var(--lav-mid));
+  opacity: 0.7;
+  border-radius: 14px 14px 0 0;
+}
+.bj-card-inner {
+  padding: 1.35rem 1.6rem 1.1rem;
+}
+.bj-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.6rem;
+}
+.bj-card-title-block { flex: 1; min-width: 0; }
+.bj-card-book-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--lav-dark);
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+.bj-card-author {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.bj-card-author::before { content: '— '; opacity: 0.7; }
+.bj-card-delete {
+  background: none;
+  border: 1px solid rgba(155,139,180,0.2);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted-lt);
+  cursor: pointer;
+  appearance: none;
+  transition: background 0.2s, color 0.2s;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+.bj-card-delete:hover { background: var(--rose-pale); color: #8A3040; }
+
+/* Stars display */
+.bj-card-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 0.6rem;
+}
+.bj-card-stars span { font-size: 14px; opacity: 0.25; }
+.bj-card-stars span.lit { opacity: 1; }
+
+/* Feelings display */
+.bj-card-feelings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 0.75rem;
+}
+.bj-card-feeling {
+  background: var(--lav-pale);
+  border-radius: 20px;
+  padding: 3px 11px;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--lav-deep);
+}
+
+/* Thoughts block */
+.bj-card-thoughts {
+  background: var(--rose-blush);
+  border-left: 2px solid var(--rose-dried);
+  border-radius: 0 8px 8px 0;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+}
+.bj-card-thoughts-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--rose-dried);
+  margin-bottom: 0.25rem;
+  opacity: 0.75;
+}
+.bj-card-thoughts-text {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--ink-mid);
+  line-height: 1.65;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Favourite line */
+.bj-card-line {
+  background: var(--lav-blush);
+  border-left: 2px solid var(--lav-mid);
+  border-radius: 0 8px 8px 0;
+  padding: 0.65rem 1rem;
+  margin-bottom: 0.75rem;
+}
+.bj-card-line-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--lav);
+  margin-bottom: 0.2rem;
+  opacity: 0.7;
+}
+.bj-card-line-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+  line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Footer row */
+.bj-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding-top: 0.5rem;
+  border-top: 1px dashed rgba(155,139,180,0.2);
+}
+.bj-card-date {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.bj-card-date-when {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--lav-dark);
+  opacity: 0.85;
+}
+.bj-card-date-saved {
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  color: var(--muted-lt);
+  letter-spacing: 1px;
+  opacity: 0.5;
+}
+.bj-card-reread {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--sage);
+}
+
+/* Empty state */
+.bj-empty {
+  text-align: center;
+  padding: 2.5rem 1rem;
+}
+.bj-empty p {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--muted-lt);
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--lav-light); border-radius: 3px; }
+
+/* ═══════════════════════════════════════
+   CACHE REMINDER STRIP
+═══════════════════════════════════════ */
+.cache-reminder {
+  background: var(--lav-blush);
+  border-bottom: 1px solid var(--border);
+  padding: 0.5rem 1.5rem;
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--lav-deep);
+  line-height: 1.45;
+  letter-spacing: 0.2px;
+}
+.cache-reminder strong {
+  font-weight: 500;
+  font-style: normal;
+  color: var(--lav-dark);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  margin-right: 4px;
+}
+
+/* ═══════════════════════════════════════
+   BACKUP BAR
+═══════════════════════════════════════ */
+.backup-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.6rem 1.5rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--cream);
+}
+.backup-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 16px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  appearance: none;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.backup-btn:hover {
+  background: var(--lav-pale);
+  color: var(--lav-dark);
+  border-color: var(--lav-mid);
+}
+
+/* ═══════════════════════════════════════
+   EXPORT BAR
+═══════════════════════════════════════ */
+.export-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.75rem;
+}
+.export-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-family: 'Jost', sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  appearance: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.export-btn:hover {
+  background: var(--lav-pale);
+  color: var(--lav-dark);
+  border-color: var(--lav-mid);
+}
+
+/* ═══════════════════════════════════════
+   PRINT / PDF STYLES
+═══════════════════════════════════════ */
+@media print {
+  /* Hide everything except the print target */
+  body > * { display: none !important; }
+  #print-target { display: block !important; }
+
+  body {
+    background: white !important;
+    color: #2E1F4D !important;
+    font-family: 'Lora', Georgia, serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  #print-target {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .print-cover {
+    text-align: center;
+    padding: 3rem 2rem 2.5rem;
+    border-bottom: 2px solid #DBCDED;
+    margin-bottom: 2rem;
+    page-break-after: avoid;
+  }
+  .print-cover-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #9B86C2;
+    margin-bottom: 0.5rem;
+  }
+  .print-cover-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: #4F3B7A;
+    margin-bottom: 0.3rem;
+    font-weight: 400;
+  }
+  .print-cover-sub {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #7A6B96;
+  }
+  .print-cover-date {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #A092BE;
+    margin-top: 1rem;
+  }
+
+  .print-entry {
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.4rem;
+    border: 1px solid #DBCDED;
+    border-radius: 12px;
+    page-break-inside: avoid;
+    background: white;
+    position: relative;
+  }
+  .print-entry-accent {
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, #C5D2BC, #D8A6B4, #BCAAD9);
+    border-radius: 12px 12px 0 0;
+    opacity: 0.8;
+  }
+  .print-entry-meta {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #A092BE;
+    margin-bottom: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .print-entry-mood { font-size: 14px; }
+  .print-entry-cat {
+    display: inline-block;
+    background: #EDE3F5;
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #7560A0;
+    margin-bottom: 0.5rem;
+  }
+  .print-entry-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #4F3B7A;
+    margin-bottom: 0.4rem;
+    font-weight: 400;
+  }
+  .print-entry-text {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 0.9rem;
+    color: #2E1F4D;
+    line-height: 1.7;
+  }
+
+  /* Book log print entries */
+  .print-book-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #4F3B7A;
+    margin-bottom: 0.2rem;
+    font-weight: 400;
+  }
+  .print-book-author {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: #7A6B96;
+    margin-bottom: 0.5rem;
+  }
+  .print-book-author::before { content: '— '; opacity: 0.7; }
+  .print-book-stars {
+    font-size: 13px;
+    color: #C99A60;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+  }
+  .print-book-genre {
+    display: inline-block;
+    background: #EBF1E6;
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-family: 'Jost', sans-serif;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #8FA784;
+    margin-bottom: 0.6rem;
+  }
+  .print-book-feelings {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: #7560A0;
+    margin-bottom: 0.6rem;
+  }
+  .print-book-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #A092BE;
+    margin-bottom: 0.2rem;
+    margin-top: 0.6rem;
+    opacity: 0.75;
+  }
+  .print-book-thoughts {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 0.88rem;
+    color: #2E1F4D;
+    line-height: 1.65;
+    border-left: 2px solid #F0DED4;
+    padding-left: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .print-book-line {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 0.88rem;
+    color: #4A3870;
+    line-height: 1.6;
+    border-left: 2px solid #BCAAD9;
+    padding-left: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .print-book-footer {
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #A092BE;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .print-book-reread { color: #8FA784; font-style: italic; }
+
+  .print-empty {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    color: #A092BE;
+    text-align: center;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .header h1 { font-size: 2.4rem; }
+  .r-word { font-size: 2.2rem; }
+  .main { padding: 1.75rem 1rem 4rem; }
+  .result-card-paper, .form-card, .journal-card { padding: 1.35rem; }
+}
+
+/* ═══════════════════════════════════════
+   LOGIN / AUTH OVERLAY
+═══════════════════════════════════════ */
+#auth-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  z-index: 10000;
+  background: linear-gradient(160deg, #A28BC9 0%, #7E68A8 55%, #5A4682 100%);
+  font-family: 'Lora', serif;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#auth-overlay.hidden { display: none; }
+.auth-card {
+  position: relative;
+  margin: 2rem auto;
+  background: var(--cream);
+  border-radius: 18px;
+  padding: 2.4rem 2.1rem;
+  width: calc(100% - 2rem);
+  max-width: 380px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 2;
+}
+.auth-card h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--lav-dark);
+  font-size: 1.75rem;
+  margin-bottom: 0.3rem;
+}
+.auth-sub {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.auth-petal {
+  font-size: 0.85rem;
+  color: var(--lav-mid);
+  margin-bottom: 1.4rem;
+  letter-spacing: 4px;
+}
+.auth-card input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  background: white;
+  color: var(--ink);
+  -webkit-appearance: none;
+}
+.auth-card input:focus {
+  outline: none;
+  border-color: var(--lav-deep);
+}
+.auth-submit {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin-top: 0.5rem;
+  background: var(--lav-deep);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.auth-submit:hover { background: var(--lav-dark); }
+.auth-cancel {
+  background: transparent;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+.auth-cancel:hover { background: var(--cream-dark); color: var(--ink-mid); }
+.auth-error {
+  color: #B0492E;
+  font-size: 0.85rem;
+  margin-top: 0.7rem;
+  min-height: 1.1em;
+}
+
+/* Instructions block on the login page */
+.auth-instructions {
+  margin-top: 1.3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+  text-align: left;
+  font-family: 'Lora', serif;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--ink-mid);
+}
+.auth-instructions p { margin: 0 0 0.7rem; }
+.auth-instructions p:last-child { margin-bottom: 0; }
+.auth-instructions strong {
+  color: var(--lav-dark);
+  font-weight: 500;
+}
+.auth-instructions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.7rem;
+}
+.auth-instructions li {
+  margin-bottom: 0.35rem;
+  padding-left: 0.9rem;
+  position: relative;
+}
+.auth-instructions li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--lav-mid);
+  font-size: 0.7rem;
+  top: 0.15rem;
+}
+
+#pwd-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw; height: 100vh;
+  z-index: 10000;
+  background: rgba(46,31,77,0.55);
+  display: none;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#pwd-modal.show { display: block; }
+#pwd-modal .auth-card {
+  position: absolute;
+  top: 50%; left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.pwd-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.45rem 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.pwd-btn:hover { background: var(--lav-blush); color: var(--lav-dark); }
+
+/* Login botanical decorations */
+.auth-decor {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.85;
+}
+.auth-decor.tl { top: 8px;    left: 8px;    width: 170px; }
+.auth-decor.tr { top: 8px;    right: 8px;   width: 170px; -webkit-transform: scaleX(-1); transform: scaleX(-1); }
+.auth-decor.bl { bottom: 8px; left: 8px;    width: 150px; -webkit-transform: scaleY(-1); transform: scaleY(-1); }
+.auth-decor.br { bottom: 8px; right: 8px;   width: 150px; -webkit-transform: scale(-1,-1); transform: scale(-1,-1); }
+
+@media (max-width: 540px) {
+  .auth-decor { opacity: 0.75; }
+  .auth-decor.tl, .auth-decor.tr { width: 115px; }
+  .auth-decor.bl, .auth-decor.br { width: 100px; }
+}
+@media (max-width: 360px) {
+  .auth-decor.tl, .auth-decor.tr { width: 90px; }
+  .auth-decor.bl, .auth-decor.br { width: 80px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════ LOGIN OVERLAY ══════ -->
+<div id="auth-overlay">
+
+  <!-- Lavender sprig (top-left) -->
+  <svg class="auth-decor tl" viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
+    <line x1="60" y1="195" x2="60" y2="55" stroke="#C5D2BC" stroke-width="1.4" opacity="0.85"/>
+    <ellipse cx="44" cy="170" rx="14" ry="5" fill="#C5D2BC" opacity="0.75" transform="rotate(-25 44 170)"/>
+    <ellipse cx="76" cy="158" rx="14" ry="5" fill="#C5D2BC" opacity="0.75" transform="rotate(25 76 158)"/>
+    <ellipse cx="46" cy="140" rx="12" ry="4.5" fill="#C5D2BC" opacity="0.65" transform="rotate(-18 46 140)"/>
+    <ellipse cx="74" cy="128" rx="12" ry="4.5" fill="#C5D2BC" opacity="0.65" transform="rotate(18 74 128)"/>
+    <ellipse cx="56" cy="100" rx="3.2" ry="5.5" fill="#DBCDED"/>
+    <ellipse cx="64" cy="92"  rx="3.2" ry="5.5" fill="#BCAAD9"/>
+    <ellipse cx="56" cy="84"  rx="3.2" ry="5.5" fill="#DBCDED"/>
+    <ellipse cx="64" cy="76"  rx="3.2" ry="5.5" fill="#BCAAD9"/>
+    <ellipse cx="56" cy="68"  rx="3.2" ry="5.5" fill="#DBCDED"/>
+    <ellipse cx="62" cy="60"  rx="2.8" ry="4.8" fill="#BCAAD9"/>
+    <ellipse cx="58" cy="53"  rx="2.4" ry="4"   fill="#DBCDED"/>
+  </svg>
+
+  <!-- Rose peony (top-right, mirrored via CSS) -->
+  <svg class="auth-decor tr" viewBox="0 0 150 180" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 70 175 Q 75 130 88 90" stroke="#C5D2BC" stroke-width="1.6" fill="none" opacity="0.85"/>
+    <ellipse cx="55" cy="145" rx="16" ry="6" fill="#C5D2BC" opacity="0.7" transform="rotate(-35 55 145)"/>
+    <ellipse cx="92" cy="115" rx="14" ry="5.5" fill="#C5D2BC" opacity="0.65" transform="rotate(35 92 115)"/>
+    <ellipse cx="88" cy="60"  rx="16" ry="20" fill="#F1D9E1"/>
+    <ellipse cx="98" cy="68"  rx="14" ry="18" fill="#D8A6B4" transform="rotate(40 98 68)"/>
+    <ellipse cx="92" cy="80"  rx="13" ry="17" fill="#F0DED4" transform="rotate(85 92 80)"/>
+    <ellipse cx="78" cy="74"  rx="13" ry="17" fill="#D8A6B4" transform="rotate(155 78 74)"/>
+    <ellipse cx="76" cy="60"  rx="14" ry="18" fill="#F1D9E1" transform="rotate(215 76 60)"/>
+    <ellipse cx="84" cy="50"  rx="14" ry="18" fill="#F0DED4" transform="rotate(280 84 50)"/>
+    <circle  cx="86" cy="65"  r="6" fill="#C99080"/>
+    <circle  cx="86" cy="65"  r="2.5" fill="#B8704A"/>
+  </svg>
+
+  <!-- Small rose cluster (bottom-left, rotated via CSS) -->
+  <svg class="auth-decor bl" viewBox="0 0 140 170" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 60 165 Q 65 120 75 80" stroke="#C5D2BC" stroke-width="1.5" fill="none" opacity="0.85"/>
+    <ellipse cx="50" cy="140" rx="13" ry="5" fill="#C5D2BC" opacity="0.7" transform="rotate(-30 50 140)"/>
+    <ellipse cx="80" cy="110" rx="12" ry="5" fill="#C5D2BC" opacity="0.65" transform="rotate(30 80 110)"/>
+    <ellipse cx="78" cy="55"  rx="13" ry="16" fill="#F1D9E1"/>
+    <ellipse cx="86" cy="62"  rx="11" ry="15" fill="#D8A6B4" transform="rotate(50 86 62)"/>
+    <ellipse cx="82" cy="72"  rx="11" ry="14" fill="#F0DED4" transform="rotate(110 82 72)"/>
+    <ellipse cx="70" cy="65"  rx="11" ry="14" fill="#D8A6B4" transform="rotate(180 70 65)"/>
+    <ellipse cx="72" cy="52"  rx="11" ry="15" fill="#F1D9E1" transform="rotate(240 72 52)"/>
+    <circle  cx="78" cy="62"  r="5" fill="#C99080"/>
+    <ellipse cx="50" cy="40" rx="3" ry="5" fill="#DBCDED" transform="rotate(-15 50 40)"/>
+    <ellipse cx="44" cy="48" rx="3" ry="5" fill="#BCAAD9" transform="rotate(-15 44 48)"/>
+    <ellipse cx="50" cy="56" rx="3" ry="5" fill="#DBCDED" transform="rotate(-15 50 56)"/>
+  </svg>
+
+  <!-- Lavender + bud (bottom-right, rotated via CSS) -->
+  <svg class="auth-decor br" viewBox="0 0 130 200" xmlns="http://www.w3.org/2000/svg">
+    <line x1="65" y1="195" x2="65" y2="60" stroke="#C5D2BC" stroke-width="1.4" opacity="0.85"/>
+    <ellipse cx="48" cy="172" rx="14" ry="5" fill="#C5D2BC" opacity="0.75" transform="rotate(-22 48 172)"/>
+    <ellipse cx="82" cy="160" rx="14" ry="5" fill="#C5D2BC" opacity="0.75" transform="rotate(22 82 160)"/>
+    <ellipse cx="50" cy="140" rx="12" ry="4.5" fill="#C5D2BC" opacity="0.65" transform="rotate(-18 50 140)"/>
+    <ellipse cx="61" cy="108" rx="3.2" ry="5.5" fill="#DBCDED"/>
+    <ellipse cx="69" cy="100" rx="3.2" ry="5.5" fill="#BCAAD9"/>
+    <ellipse cx="61" cy="92"  rx="3.2" ry="5.5" fill="#DBCDED"/>
+    <ellipse cx="69" cy="84"  rx="3.2" ry="5.5" fill="#BCAAD9"/>
+    <ellipse cx="61" cy="76"  rx="3.2" ry="5.5" fill="#DBCDED"/>
+    <ellipse cx="67" cy="68"  rx="2.8" ry="4.8" fill="#BCAAD9"/>
+    <ellipse cx="63" cy="62"  rx="2.4" ry="4"   fill="#DBCDED"/>
+  </svg>
+
+  <form class="auth-card" onsubmit="event.preventDefault(); doLogin();">
+    <h2>May's Carnet</h2>
+    <p class="auth-sub">✦ Welcome ✦</p>
+    <p class="auth-petal">❦ ❦ ❦</p>
+    <input id="auth-user" type="text" placeholder="Username" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false">
+    <input id="auth-pass" type="password" placeholder="Password" autocomplete="current-password">
+    <button type="submit" class="auth-submit">Enter</button>
+    <div class="auth-error" id="auth-error"></div>
+    <div class="auth-instructions">
+      <p><strong>Signing in</strong> On each new phone, tablet, or browser, you'll start with the same default username and password, even if you've changed it elsewhere. Once you're inside, you can set a new one (top bar → 🔒 Change password) — it will be remembered on <em>this</em> device only.</p>
+      <p><strong>How to use your carnet</strong></p>
+      <ul>
+        <li><strong>Mon Journal</strong> — write a sentence (or a page) each day. Pick a mood, a theme, or a prompt — or just write freely.</li>
+        <li><strong>Chercher</strong> — look up any word in English or French. Save the ones you love to your collection.</li>
+        <li><strong>Ma Collection</strong> — your personal vocab bank. Filter by gender, type, or theme.</li>
+        <li><strong>Bibliothèque</strong> — a new book suggestion each day, and a place to keep notes on books you've read.</li>
+      </ul>
+      <p><strong>Your privacy</strong> Everything you write stays on this device. Nothing is sent anywhere, and no one else can see your entries — even if they have the link.</p>
+      <p><strong>✦ Important — keeping your carnet safe</strong> Because your entries live only in this browser, they will be <em>wiped if you clear your cache, browsing data, or site data</em>. To keep your words safe:</p>
+      <ul>
+        <li><strong>⇩ Export backup</strong> (top bar) — saves everything (vocab, journal, books) as a small file. Do this every week or so. You can <strong>⇧ Import backup</strong> on any other phone, tablet, or computer to carry your carnet with you.</li>
+        <li><strong>⇩ Export as PDF</strong> (inside Mon Journal &amp; Bibliothèque) — saves a beautiful printable copy of your entries. Lovely to keep, share, or print.</li>
+      </ul>
+      <p>A gentle rhythm: back up once a week, and again before clearing your browser or switching devices. ❦</p>
+    </div>
+  </form>
+</div>
+
+<!-- ══════ CHANGE PASSWORD MODAL ══════ -->
+<div id="pwd-modal">
+  <form class="auth-card" onsubmit="event.preventDefault(); doChangePassword();">
+    <h2>Change Password</h2>
+    <p class="auth-sub">✦ Update your secret ✦</p>
+    <p class="auth-petal">❦ ❦ ❦</p>
+    <input id="pwd-current" type="password" placeholder="Current password">
+    <input id="pwd-new" type="password" placeholder="New password (min 4 chars)">
+    <input id="pwd-confirm" type="password" placeholder="Confirm new password">
+    <button type="submit" class="auth-submit">Save</button>
+    <button type="button" class="auth-submit auth-cancel" onclick="closePwdModal()">Cancel</button>
+    <div class="auth-error" id="pwd-error"></div>
+  </form>
+</div>
+
+<script>
+(function() {
+  var USERNAME = 'Maylee';
+  var DEFAULT_PWD = 'Happybirthdaymay';
+  function getStoredPwd() {
+    try { return localStorage.getItem('mays_auth_pwd') || DEFAULT_PWD; }
+    catch(e) { return DEFAULT_PWD; }
+  }
+  function isLoggedIn() {
+    try { return localStorage.getItem('mays_auth_session') === '1'; }
+    catch(e) { return false; }
+  }
+  function revealApp() {
+    var c = document.getElementById('app-content');
+    if (c) c.style.display = '';
+    document.getElementById('auth-overlay').classList.add('hidden');
+  }
+  window.doLogin = function() {
+    var u = (document.getElementById('auth-user').value || '').trim();
+    var p = document.getElementById('auth-pass').value || '';
+    var err = document.getElementById('auth-error');
+    if (u.toLowerCase() === USERNAME.toLowerCase() && p === getStoredPwd()) {
+      try { localStorage.setItem('mays_auth_session', '1'); } catch(e) {}
+      revealApp();
+      err.textContent = '';
+    } else {
+      err.textContent = 'Username or password incorrect.';
+      document.getElementById('auth-pass').value = '';
+    }
+  };
+  window.openPwdModal = function() {
+    document.getElementById('pwd-current').value = '';
+    document.getElementById('pwd-new').value = '';
+    document.getElementById('pwd-confirm').value = '';
+    var err = document.getElementById('pwd-error');
+    err.textContent = ''; err.style.color = '';
+    document.getElementById('pwd-modal').classList.add('show');
+  };
+  window.closePwdModal = function() {
+    document.getElementById('pwd-modal').classList.remove('show');
+  };
+  window.doChangePassword = function() {
+    var cur = document.getElementById('pwd-current').value || '';
+    var n = document.getElementById('pwd-new').value || '';
+    var c = document.getElementById('pwd-confirm').value || '';
+    var err = document.getElementById('pwd-error');
+    err.style.color = '';
+    if (cur !== getStoredPwd()) { err.textContent = 'Current password is incorrect.'; return; }
+    if (n.length < 4) { err.textContent = 'New password must be at least 4 characters.'; return; }
+    if (n !== c) { err.textContent = 'New passwords do not match.'; return; }
+    try { localStorage.setItem('mays_auth_pwd', n); } catch(e) {}
+    err.style.color = '#5A8F4A';
+    err.textContent = 'Password updated ✓';
+    setTimeout(function() {
+      closePwdModal();
+      err.style.color = ''; err.textContent = '';
+    }, 1100);
+  };
+  window.doLogout = function() {
+    try { localStorage.removeItem('mays_auth_session'); } catch(e) {}
+    location.reload();
+  };
+  function initAuth() {
+    if (isLoggedIn()) {
+      revealApp();
+    } else {
+      var u = document.getElementById('auth-user');
+      if (u) u.focus();
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAuth);
+  } else {
+    initAuth();
+  }
+})();
+</script>
+
+<!-- All carnet content — hidden until login -->
+<div id="app-content" style="display:none;">
+
+<!-- Floating botanical background -->
+<div class="botanical-bg">
+  <!-- Lavender sprig top right -->
+  <svg class="b1" viewBox="0 0 200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="1">
+      <line x1="100" y1="280" x2="100" y2="20" stroke="#9B8BB4" stroke-width="1.5"/>
+      <line x1="100" y1="200" x2="60" y2="150" stroke="#9B8BB4" stroke-width="1"/>
+      <line x1="100" y1="180" x2="140" y2="130" stroke="#9B8BB4" stroke-width="1"/>
+      <line x1="100" y1="160" x2="65" y2="115" stroke="#9B8BB4" stroke-width="1"/>
+      <line x1="100" y1="140" x2="135" y2="95" stroke="#9B8BB4" stroke-width="1"/>
+      <ellipse cx="55" cy="145" rx="7" ry="12" fill="#9B8BB4" transform="rotate(-30 55 145)"/>
+      <ellipse cx="145" cy="125" rx="7" ry="12" fill="#9B8BB4" transform="rotate(30 145 125)"/>
+      <ellipse cx="60" cy="108" rx="6" ry="11" fill="#B8A8CC" transform="rotate(-25 60 108)"/>
+      <ellipse cx="140" cy="88" rx="6" ry="11" fill="#B8A8CC" transform="rotate(25 140 88)"/>
+      <ellipse cx="100" cy="50" rx="6" ry="14" fill="#9B8BB4"/>
+      <ellipse cx="100" cy="32" rx="5" ry="10" fill="#B8A8CC"/>
+      <ellipse cx="88" cy="70" rx="5" ry="10" fill="#9B8BB4" transform="rotate(-15 88 70)"/>
+      <ellipse cx="112" cy="65" rx="5" ry="10" fill="#9B8BB4" transform="rotate(15 112 65)"/>
+    </g>
+  </svg>
+  <!-- Dried rose bottom left -->
+  <svg class="b2" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g>
+      <circle cx="100" cy="100" r="25" fill="none" stroke="#C4876A" stroke-width="1"/>
+      <ellipse cx="100" cy="75" rx="12" ry="18" fill="#C4876A" opacity="0.6"/>
+      <ellipse cx="125" cy="90" rx="12" ry="18" fill="#D4A080" opacity="0.5" transform="rotate(60 125 90)"/>
+      <ellipse cx="120" cy="118" rx="12" ry="18" fill="#C4876A" opacity="0.5" transform="rotate(120 120 118)"/>
+      <ellipse cx="100" cy="128" rx="12" ry="18" fill="#D4A080" opacity="0.6" transform="rotate(180 100 128)"/>
+      <ellipse cx="78" cy="118" rx="12" ry="18" fill="#C4876A" opacity="0.5" transform="rotate(240 78 118)"/>
+      <ellipse cx="75" cy="90" rx="12" ry="18" fill="#D4A080" opacity="0.5" transform="rotate(300 75 90)"/>
+      <circle cx="100" cy="100" r="8" fill="#B8704A" opacity="0.7"/>
+      <line x1="100" y1="125" x2="90" y2="180" stroke="#7A9070" stroke-width="1.5"/>
+      <ellipse cx="75" cy="165" rx="14" ry="9" fill="#7A9070" opacity="0.6" transform="rotate(-20 75 165)"/>
+      <ellipse cx="108" cy="155" rx="12" ry="8" fill="#7A9070" opacity="0.5" transform="rotate(15 108 155)"/>
+    </g>
+  </svg>
+  <!-- Small sprig right middle -->
+  <svg class="b3" viewBox="0 0 100 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="50" y1="150" x2="50" y2="10" stroke="#9B8BB4" stroke-width="1.2"/>
+    <ellipse cx="50" cy="30" rx="5" ry="12" fill="#9B8BB4" opacity="0.7"/>
+    <ellipse cx="38" cy="55" rx="5" ry="10" fill="#B8A8CC" opacity="0.6" transform="rotate(-20 38 55)"/>
+    <ellipse cx="62" cy="50" rx="5" ry="10" fill="#B8A8CC" opacity="0.6" transform="rotate(20 62 50)"/>
+    <ellipse cx="40" cy="75" rx="4" ry="9" fill="#9B8BB4" opacity="0.5" transform="rotate(-15 40 75)"/>
+    <ellipse cx="60" cy="70" rx="4" ry="9" fill="#9B8BB4" opacity="0.5" transform="rotate(15 60 70)"/>
+  </svg>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top-ribbon" style="height:3px;background:linear-gradient(90deg,transparent,#B8A8CC,#C4876A,#B8A8CC,transparent);opacity:0.6;"></div>
+  <div class="header-inner">
+    <!-- Botanical header decoration -->
+    <div class="header-botanical-row">
+      <svg class="header-botanical-svg" viewBox="0 0 60 60" fill="none">
+        <line x1="30" y1="55" x2="30" y2="5" stroke="#D9CEEA" stroke-width="1"/>
+        <ellipse cx="30" cy="12" rx="5" ry="10" fill="#D9CEEA" opacity="0.7"/>
+        <ellipse cx="18" cy="28" rx="4" ry="8" fill="#D9CEEA" opacity="0.5" transform="rotate(-20 18 28)"/>
+        <ellipse cx="42" cy="25" rx="4" ry="8" fill="#D9CEEA" opacity="0.5" transform="rotate(20 42 25)"/>
+        <ellipse cx="20" cy="42" rx="4" ry="7" fill="#B8A8CC" opacity="0.4" transform="rotate(-15 20 42)"/>
+        <ellipse cx="40" cy="38" rx="4" ry="7" fill="#B8A8CC" opacity="0.4" transform="rotate(15 40 38)"/>
+      </svg>
+      <svg style="width:20px;height:20px;opacity:0.5;margin:0 8px;" viewBox="0 0 20 20" fill="none">
+        <circle cx="10" cy="10" r="6" fill="none" stroke="#C4876A" stroke-width="0.8"/>
+        <ellipse cx="10" cy="4" rx="3" ry="5" fill="#C4876A" opacity="0.5"/>
+        <ellipse cx="15" cy="8" rx="3" ry="5" fill="#D4A080" opacity="0.4" transform="rotate(60 15 8)"/>
+        <ellipse cx="14" cy="15" rx="3" ry="5" fill="#C4876A" opacity="0.4" transform="rotate(120 14 15)"/>
+        <ellipse cx="6" cy="15" rx="3" ry="5" fill="#D4A080" opacity="0.4" transform="rotate(240 6 15)"/>
+        <ellipse cx="5" cy="8" rx="3" ry="5" fill="#C4876A" opacity="0.4" transform="rotate(300 5 8)"/>
+      </svg>
+      <svg class="header-botanical-svg mirror" viewBox="0 0 60 60" fill="none">
+        <line x1="30" y1="55" x2="30" y2="5" stroke="#D9CEEA" stroke-width="1"/>
+        <ellipse cx="30" cy="12" rx="5" ry="10" fill="#D9CEEA" opacity="0.7"/>
+        <ellipse cx="18" cy="28" rx="4" ry="8" fill="#D9CEEA" opacity="0.5" transform="rotate(-20 18 28)"/>
+        <ellipse cx="42" cy="25" rx="4" ry="8" fill="#D9CEEA" opacity="0.5" transform="rotate(20 42 25)"/>
+        <ellipse cx="20" cy="42" rx="4" ry="7" fill="#B8A8CC" opacity="0.4" transform="rotate(-15 20 42)"/>
+        <ellipse cx="40" cy="38" rx="4" ry="7" fill="#B8A8CC" opacity="0.4" transform="rotate(15 40 38)"/>
+      </svg>
+    </div>
+    <p class="header-eyebrow">✦ &nbsp; Est. 19 May 1996 &nbsp; ✦</p>
+    <h1>May's <em>French</em><br>Carnet</h1>
+    <p class="header-tagline">Une langue, une âme &mdash; A language, a soul</p>
+    <div class="header-petal-row">
+      <span class="petal-line"></span>
+      <span class="petal-center">❦ ❦ ❦</span>
+      <span class="petal-line r"></span>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('journal')">Mon Journal</button>
+    <button class="tab-btn" onclick="switchTab('lookup')">Chercher</button>
+    <button class="tab-btn" onclick="switchTab('vocab')">Ma Collection</button>
+    <button class="tab-btn" onclick="switchTab('books')">Bibliothèque</button>
+  </div>
+
+  <!-- Cache reminder -->
+  <div class="cache-reminder">
+    <strong>✦ Tip</strong> Export your backup regularly — your entries will be wiped if you clear your browser cache.
+  </div>
+
+  <!-- Backup bar -->
+  <div class="backup-bar">
+    <button class="backup-btn" onclick="exportBackup()">&#8681; Export backup</button>
+    <button class="backup-btn" onclick="document.getElementById('import-file').click()">&#8679; Import backup</button>
+    <button class="backup-btn" onclick="openPwdModal()">🔒 Change password</button>
+    <button class="backup-btn" onclick="doLogout()">↪ Sign out</button>
+    <input type="file" id="import-file" accept=".json" style="display:none;" onchange="importBackup(event)">
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ══════ LOOKUP ══════ -->
+  <div class="section" id="section-lookup">
+    <div class="section-head">
+      <p class="section-title">Word Lookup</p>
+      <p class="section-sub">Chercher un mot en anglais ou en français</p>
+      <div class="petal-divider"><span class="pd-line"></span><span class="pd-mark">❦ ❦ ❦</span><span class="pd-line r"></span></div>
+    </div>
+
+    <div class="search-wrap">
+      <input class="search-input" id="searchInput" type="text"
+        placeholder="Type a word…"
+        autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <button class="search-btn" onclick="doSearch()">Chercher →</button>
+    </div>
+
+    <div class="loading" id="loading">
+      <div class="loading-petals"><span>🌸</span><span>💜</span><span>🌿</span></div>
+      <p class="loading-text">Turning the pages…</p>
+    </div>
+    <div class="error-card" id="errorCard"></div>
+
+    <div class="result-card" id="resultCard">
+      <div class="result-card-paper">
+        <!-- Word + speak -->
+        <div style="display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:flex-start;align-items:flex-start;margin-bottom:0.9rem;">
+          <div class="r-word-section" style="margin-bottom:0;">
+            <div class="r-word" id="r-word"></div>
+            <div class="r-word-english" id="r-word-en-small"></div>
+            <div class="r-phonetic" id="r-phonetic"></div>
+            <div class="r-meta-row">
+              <span class="badge" id="r-gender-badge"></span>
+              <span class="badge badge-pos" id="r-pos"></span>
+            </div>
+            <div class="r-gender-line" id="r-gender-line" style="display:none;margin-top:0.5rem;">
+              <span class="r-gender-label" id="r-gender-label"></span>
+            </div>
+          </div>
+          <button class="speak-btn" id="r-speak" title="Écouter">🔊</button>
+        </div>
+
+        <div class="wave-divider">~ ~ ~</div>
+
+        <!-- Meaning -->
+        <div class="r-meaning" id="r-trans-row">
+          <p class="r-meaning-label">Définition &amp; meaning</p>
+          <p class="r-meaning-text" id="r-fr"></p>
+          <p class="r-meaning-en" id="r-en"></p>
+        </div>
+
+        <!-- Example -->
+        <div class="r-example" id="r-example-block">
+          <p class="r-example-label">Exemple en français</p>
+          <p class="r-example-fr" id="r-ex-fr"></p>
+          <p class="r-example-en" id="r-ex-en"></p>
+        </div>
+
+        <p class="r-source-badge" id="r-db-source"></p>
+        <button class="save-btn" onclick="saveFromResult()">✦ Save to Vocab Bank</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ VOCAB BANK ══════ -->
+  <div class="section" id="section-vocab">
+    <div class="section-head">
+      <p class="section-title">My Vocab Bank</p>
+      <p class="section-sub">Votre collection personnelle, mot par mot</p>
+      <div class="petal-divider"><span class="pd-line"></span><span class="pd-mark">❦ ❦ ❦</span><span class="pd-line r"></span></div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-row">
+        <div class="fg half"><label for="v-fr">French Word</label><input type="text" id="v-fr" placeholder="e.g. la lumière"></div>
+        <div class="fg half"><label for="v-en">English Meaning</label><input type="text" id="v-en" placeholder="e.g. the light"></div>
+      </div>
+      <div class="form-row">
+        <div class="fg third"><label for="v-gender">Gender</label>
+          <select id="v-gender"><option value="none">— None —</option><option value="feminine">Féminin</option><option value="masculine">Masculin</option></select></div>
+        <div class="fg third"><label for="v-pos">Part of Speech</label>
+          <select id="v-pos"><option value="noun">Noun</option><option value="verb">Verb</option><option value="adjective">Adjective</option><option value="adverb">Adverb</option><option value="phrase">Phrase</option><option value="other">Other</option></select></div>
+        <div class="fg third"><label for="v-cat">Category</label>
+          <select id="v-cat"><option value="General">General</option><option value="Food">Food</option><option value="Travel">Travel</option><option value="Emotions">Emotions</option><option value="Work">Work</option><option value="Home">Home</option><option value="Fashion">Fashion</option><option value="Nature">Nature</option><option value="Other">Other</option></select></div>
+      </div>
+      <div class="form-row">
+        <div class="fg full"><label for="v-note">Personal Note</label>
+          <textarea id="v-note" placeholder="A memory tip, mnemonic, or your own example sentence…"></textarea></div>
+      </div>
+      <input type="hidden" id="v-phonetic">
+      <input type="hidden" id="v-qfr">
+      <input type="hidden" id="v-qen">
+      <input type="hidden" id="v-src">
+      <button class="add-btn" onclick="addWord()">✦ Save to My Collection</button>
+    </div>
+
+    <div class="filter-bar">
+      <span class="filter-label">Filter &amp; Search</span>
+      <div class="filter-row">
+        <div class="f-search"><input type="text" id="f-search" placeholder="Search words…" oninput="renderVocabDebounced()"></div>
+        <div class="f-sel"><select id="f-gender" onchange="renderVocab()"><option value="">All Genders</option><option value="masculine">Masculin</option><option value="feminine">Féminin</option><option value="none">None</option></select></div>
+        <div class="f-sel"><select id="f-pos" onchange="renderVocab()"><option value="">All POS</option><option value="noun">Noun</option><option value="verb">Verb</option><option value="adjective">Adjective</option><option value="adverb">Adverb</option><option value="phrase">Phrase</option><option value="other">Other</option></select></div>
+        <div class="f-sel"><select id="f-cat" onchange="renderVocab()"><option value="">All Categories</option><option value="General">General</option><option value="Food">Food</option><option value="Travel">Travel</option><option value="Emotions">Emotions</option><option value="Work">Work</option><option value="Home">Home</option><option value="Fashion">Fashion</option><option value="Nature">Nature</option><option value="Other">Other</option></select></div>
+      </div>
+    </div>
+
+    <p class="vocab-count" id="vocab-count"></p>
+    <div id="vocab-list"></div>
+  </div>
+
+  <!-- ══════ BOOKS ══════ -->
+  <div class="section" id="section-books">
+    <div class="section-head">
+      <p class="section-title">La Bibliothèque</p>
+      <p class="section-sub">Un livre par jour, en anglais</p>
+      <div class="petal-divider"><span class="pd-line"></span><span class="pd-mark">❦ ❦ ❦</span><span class="pd-line r"></span></div>
+    </div>
+
+    <!-- Livre du jour — book of the day (English) -->
+    <div class="livre-card">
+      <p class="livre-label">✦ Livre du Jour ✦</p>
+      <div class="livre-body">
+        <div class="livre-cover no-img" id="livre-cover"></div>
+        <div class="livre-info">
+          <p class="livre-title" id="livre-title">Loading…</p>
+          <p class="livre-author" id="livre-author"></p>
+          <p class="livre-desc" id="livre-desc"></p>
+          <div class="livre-meta" id="livre-meta"></div>
+        </div>
+      </div>
+      <button class="livre-refresh" onclick="nextLivre()">↻ Another Book</button>
+    </div>
+
+    <!-- ── Mon Carnet de Lecture divider ── -->
+    <div class="bj-section-divider">
+      <span class="pd-line"></span>
+      <span class="bj-section-divider-label">Mon Carnet de Lecture</span>
+      <span class="pd-line r"></span>
+    </div>
+
+    <!-- Add a book form -->
+    <div class="bj-form-card">
+      <p class="bj-form-title">Record a book you've read ✦</p>
+
+      <div class="form-row">
+        <div class="fg half"><label for="bj-title">Book Title</label><input type="text" id="bj-title" placeholder="e.g. Normal People"></div>
+        <div class="fg half"><label for="bj-author">Author</label><input type="text" id="bj-author" placeholder="e.g. Sally Rooney"></div>
+      </div>
+
+      <div class="form-row">
+        <div class="fg half"><label for="bj-when">When did you read it?</label><input type="text" id="bj-when" placeholder="e.g. March 2025, last summer…"></div>
+        <div class="fg half"><label for="bj-genre">Genre / Mood</label>
+          <select id="bj-genre">
+            <option value="">— choose —</option>
+            <option value="Literary Fiction">Literary Fiction</option>
+            <option value="Romance">Romance</option>
+            <option value="Mystery &amp; Thriller">Mystery &amp; Thriller</option>
+            <option value="Historical Fiction">Historical Fiction</option>
+            <option value="Sci-Fi &amp; Fantasy">Sci-Fi &amp; Fantasy</option>
+            <option value="Non-Fiction">Non-Fiction</option>
+            <option value="Memoir &amp; Biography">Memoir &amp; Biography</option>
+            <option value="Poetry">Poetry</option>
+            <option value="Classics">Classics</option>
+            <option value="Short Stories">Short Stories</option>
+            <option value="Philosophy">Philosophy</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="bj-stars-row">
+        <label>Your Rating</label>
+        <div class="star-picker" id="bj-stars">
+          <span data-v="1">&#9733;</span>
+          <span data-v="2">&#9733;</span>
+          <span data-v="3">&#9733;</span>
+          <span data-v="4">&#9733;</span>
+          <span data-v="5">&#9733;</span>
+        </div>
+      </div>
+
+      <div class="bj-feeling-row">
+        <label>How did it make you feel?</label>
+        <div class="bj-feelings" id="bj-feelings">
+          <button class="bj-feeling-btn" data-f="moved">moved</button>
+          <button class="bj-feeling-btn" data-f="enchanted">enchanted</button>
+          <button class="bj-feeling-btn" data-f="inspired">inspired</button>
+          <button class="bj-feeling-btn" data-f="unsettled">unsettled</button>
+          <button class="bj-feeling-btn" data-f="curious">curious</button>
+          <button class="bj-feeling-btn" data-f="wistful">wistful</button>
+          <button class="bj-feeling-btn" data-f="heartbroken">heartbroken</button>
+          <button class="bj-feeling-btn" data-f="delighted">delighted</button>
+          <button class="bj-feeling-btn" data-f="haunted">haunted</button>
+          <button class="bj-feeling-btn" data-f="comforted">comforted</button>
+          <button class="bj-feeling-btn" data-f="exhilarated">exhilarated</button>
+          <button class="bj-feeling-btn" data-f="thoughtful">thoughtful</button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="fg full"><label for="bj-thoughts">Your thoughts</label>
+          <textarea id="bj-thoughts" placeholder="What stayed with you? A character, a moment, an idea — write freely…" style="min-height:88px;"></textarea>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="fg full"><label for="bj-line">A favourite line or passage (optional)</label>
+          <textarea id="bj-line" placeholder="A sentence that stopped you in your tracks…" style="min-height:60px;"></textarea>
+        </div>
+      </div>
+
+      <div class="bj-reread-row">
+        <label class="bj-toggle">
+          <input type="checkbox" id="bj-reread">
+          <span class="bj-toggle-track"></span>
+        </label>
+        <span class="bj-reread-label">I would read this again</span>
+      </div>
+
+      <button class="bj-add-btn" onclick="addBookEntry()">&#10022; Save to My Reading Journal</button>
+    </div>
+
+    <div class="export-bar" id="bj-export-bar" style="display:none;">
+      <button class="export-btn" onclick="exportBooksPDF()">&#8681; Export as PDF</button>
+    </div>
+    <p class="bj-count" id="bj-count"></p>
+    <div id="bj-list"></div>
+
+  </div>
+
+  <!-- ══════ JOURNAL ══════ -->
+  <div class="section active" id="section-journal">
+    <div class="section-head">
+      <p class="section-title">Mon Journal</p>
+      <p class="section-sub">One sentence a day keeps forgetting away</p>
+      <div class="petal-divider"><span class="pd-line"></span><span class="pd-mark">❦ ❦ ❦</span><span class="pd-line r"></span></div>
+    </div>
+
+    <div class="journal-card">
+      <p class="journal-date-line" id="j-date"></p>
+      <div class="mood-row">
+        <span class="mood-label">Mood today</span>
+        <button class="mood-btn selected" data-mood="🌸" onclick="pickMood(this)">🌸</button>
+        <button class="mood-btn" data-mood="💜" onclick="pickMood(this)">💜</button>
+        <button class="mood-btn" data-mood="🌿" onclick="pickMood(this)">🌿</button>
+        <button class="mood-btn" data-mood="🕯️" onclick="pickMood(this)">🕯️</button>
+        <button class="mood-btn" data-mood="✨" onclick="pickMood(this)">✨</button>
+      </div>
+
+      <div class="cat-row">
+        <span class="mood-label">Today's entry is about</span>
+        <div class="cat-pills">
+          <button class="cat-btn selected" data-cat="Réflexion" onclick="pickCat(this)"><span class="cat-emoji">💭</span>Réflexion</button>
+          <button class="cat-btn" data-cat="Gratitude" onclick="pickCat(this)"><span class="cat-emoji">🌱</span>Gratitude</button>
+          <button class="cat-btn" data-cat="Rêves" onclick="pickCat(this)"><span class="cat-emoji">🌙</span>Rêves</button>
+          <button class="cat-btn" data-cat="Lâcher prise" onclick="pickCat(this)"><span class="cat-emoji">🍃</span>Lâcher prise</button>
+          <button class="cat-btn" data-cat="Petites victoires" onclick="pickCat(this)"><span class="cat-emoji">✨</span>Petites victoires</button>
+          <button class="cat-btn" data-cat="Inquiétudes" onclick="pickCat(this)"><span class="cat-emoji">🌧️</span>Inquiétudes</button>
+          <button class="cat-btn" data-cat="Souvenir" onclick="pickCat(this)"><span class="cat-emoji">📖</span>Souvenir</button>
+          <button class="cat-btn" data-cat="Écriture libre" onclick="pickCat(this)"><span class="cat-emoji">✏️</span>Libre</button>
+        </div>
+      </div>
+
+      <div class="journal-hint">
+        <span class="journal-hint-label">✦ A prompt, if you'd like one</span>
+        <span class="journal-hint-text" id="j-prompt-fr"></span>
+        <span class="journal-hint-en" id="j-prompt-en"></span>
+      </div>
+
+      <label class="filter-label" for="j-title" style="margin-bottom:4px;display:block;">Title (optional)</label>
+      <input type="text" class="journal-title-input" id="j-title" placeholder="Donnez un titre à cette page…">
+
+      <label class="filter-label" for="j-text" style="margin-bottom:6px;display:block;">Your entry — write as much as you'd like</label>
+      <textarea class="journal-textarea" id="j-text" placeholder="Écrivez librement… une pensée, une histoire, un souvenir. Personne d'autre ne le lira."></textarea>
+      <div class="journal-bottom-row">
+        <button class="journal-save-btn" onclick="saveEntry()">✦ Save Entry</button>
+        <button class="journal-new-prompt" onclick="nextPrompt()">↻ New Prompt</button>
+      </div>
+    </div>
+
+    <div class="export-bar" id="journal-export-bar" style="display:none;">
+      <button class="export-btn" onclick="exportJournalPDF()">&#8681; Export as PDF</button>
+    </div>
+    <p class="journal-entries-label" id="j-entries-label"></p>
+    <div id="journal-list"></div>
+  </div>
+
+</div><!-- /main -->
+
+<div class="toast" id="toast"></div>
+
+</div>
+<!-- end #app-content -->
+
+<script>
+
+
+var currentResult = null;
+var vocabBank = [];
+var journalEntries = [];
+var selectedMood = '🌸';
+var selectedCat = 'Réflexion';
+var promptIdx = 0;
+var livreIdx = 0;
+
+var PROMPTS = [
+  { fr: "Qu'est-ce qui vous a fait sourire aujourd'hui ?", en: "What made you smile today?" },
+  { fr: "Pour quoi êtes-vous reconnaissante en ce moment ?", en: "What are you grateful for right now?" },
+  { fr: "Nommez trois petites choses qui vont bien.", en: "Name three small things that are going well." },
+  { fr: "Qu'est-ce que votre cœur essaie de vous dire ?", en: "What is your heart trying to tell you?" },
+  { fr: "Décrivez une émotion que vous portez aujourd'hui.", en: "Describe an emotion you are carrying today." },
+  { fr: "Que voulez-vous laisser partir cette semaine ?", en: "What do you want to let go of this week?" },
+  { fr: "Écrivez une lettre à votre moi d'il y a un an.", en: "Write a letter to yourself one year ago." },
+  { fr: "Quelle est la chose la plus douce que quelqu'un vous ait dite récemment ?", en: "What is the kindest thing someone said to you recently?" },
+  { fr: "Décrivez un souvenir qui vous apporte de la paix.", en: "Describe a memory that brings you peace." },
+  { fr: "Quel rêve gardez-vous précieusement en ce moment ?", en: "What dream are you holding close right now?" },
+  { fr: "Qu'est-ce qui vous semble lourd aujourd'hui, et pourquoi ?", en: "What feels heavy today, and why?" },
+  { fr: "De quoi avez-vous le plus besoin en ce moment ?", en: "What do you need most right now?" },
+  { fr: "Décrivez votre journée comme si c'était une saison.", en: "Describe your day as if it were a season." },
+  { fr: "Quelle petite victoire mérite d'être célébrée aujourd'hui ?", en: "What small win deserves to be celebrated today?" },
+  { fr: "Quelle est une chose que vous voulez vous rappeler de cette semaine ?", en: "What is one thing you want to remember from this week?" },
+  { fr: "Si vous pouviez dire une chose à quelqu'un que vous aimez, ce serait quoi ?", en: "If you could say one thing to someone you love, what would it be?" },
+  { fr: "Qu'est-ce qui vous donne de l'espoir en ce moment ?", en: "What is giving you hope right now?" },
+  { fr: "Imaginez que vous êtes à Paris — que voyez-vous, qu'entendez-vous ?", en: "Imagine you are in Paris — what do you see, what do you hear?" }
+];
+
+(function checkProtocol() {
+  if (window.location.protocol === 'file:') {
+    var warn = document.createElement('div');
+    warn.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#6B5A82;color:#EDE8F5;padding:10px 16px;font-family:Jost,sans-serif;font-size:12px;letter-spacing:1px;text-align:center;';
+    warn.innerHTML = '⚠ &nbsp; To use the live dictionary, please open this file in a browser tab via a server, or drag it into Chrome/Safari directly. &nbsp; <button onclick="this.parentNode.remove()" style="background:none;border:1px solid #EDE8F5;color:#EDE8F5;border-radius:10px;padding:2px 10px;cursor:pointer;font-size:11px;margin-left:8px;">OK</button>';
+    document.body.appendChild(warn);
+  }
+})();
+
+document.addEventListener('DOMContentLoaded', function() {
+  var input = document.getElementById('searchInput');
+  if (input) {
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault(); doSearch(); }
+    });
+  }
+});
+
+(function init() {
+  try {
+    var v = localStorage.getItem('mays_vocab_v3'); if (v) vocabBank = JSON.parse(v);
+    var j = localStorage.getItem('mays_journal_v3'); if (j) journalEntries = JSON.parse(j);
+  } catch(e) {}
+  promptIdx = Math.floor(Math.random() * PROMPTS.length);
+  livreIdx  = 0; // randomized in deferred block below (FALLBACK_BOOKS hoisted but undefined here)
+  renderPrompt();
+  setJournalDate();
+  // renderLivre depends on FALLBACK_BOOKS, defined later — defer.
+  setTimeout(function() {
+    if (typeof FALLBACK_BOOKS !== 'undefined' && FALLBACK_BOOKS && FALLBACK_BOOKS.length) {
+      livreIdx = Math.floor(Math.random() * FALLBACK_BOOKS.length);
+    }
+    if (typeof renderLivre === 'function') renderLivre();
+  }, 0);
+})();
+
+/* ──── Livre du Jour — English books via Google Books API ────
+   Random subject + random offset for variety. Filters to English only.
+   Falls back to curated classics if the API hangs or fails. */
+var BOOK_SUBJECTS = [
+  'fiction','classics','poetry','literature','romance','mystery','thriller','historical fiction',
+  'history','philosophy','biography','memoir','autobiography','essays','travel','adventure',
+  'science fiction','fantasy','magical realism','dystopian','horror','gothic','crime','detective',
+  'short stories','young adult','contemporary fiction','literary fiction','psychological fiction',
+  'science','popular science','psychology','sociology','economics','politics','nature writing',
+  'art','music','cookbook','food writing','self-help','business','technology','design',
+  'african literature','asian literature','latin american literature','japanese literature',
+  'french literature','russian literature','indian literature','feminist literature','queer literature',
+  'graphic novels','war','mythology','folklore','anthropology',
+  'environment','climate','health','medicine','education','linguistics','true crime',
+  'sports','espionage','western','romance contemporary','coming of age','family saga','satire'];
+
+// Diverse last-resort safety net (only used if BOTH APIs fail).
+// Modern, international, mixed genres — not just Victorian classics.
+var FALLBACK_BOOKS = [
+  { title: "Pachinko", author: "Min Jin Lee", desc: "A sweeping multigenerational saga of a Korean family in 20th-century Japan — love, exile, and the cost of belonging.", year: "2017" },
+  { title: "Beloved", author: "Toni Morrison", desc: "A formerly enslaved woman is haunted — literally and spiritually — by the daughter she lost. A novel of memory, trauma, and motherhood.", year: "1987" },
+  { title: "The Wind-Up Bird Chronicle", author: "Haruki Murakami", desc: "A man searches for his missing cat — and then his missing wife — and tumbles into a labyrinth of dreams beneath suburban Tokyo.", year: "1994" },
+  { title: "Things Fall Apart", author: "Chinua Achebe", desc: "Okonkwo, a proud Igbo warrior, faces the collision between his world and the arrival of European colonisers.", year: "1958" },
+  { title: "One Hundred Years of Solitude", author: "Gabriel García Márquez", desc: "Seven generations of the Buendía family in the mythical town of Macondo — the founding text of magical realism.", year: "1967" },
+  { title: "Klara and the Sun", author: "Kazuo Ishiguro", desc: "An Artificial Friend watches the world from a shop window, hoping to be chosen. A tender meditation on what it means to be human.", year: "2021" },
+  { title: "The Vegetarian", author: "Han Kang", desc: "A Korean woman stops eating meat, and her quiet rebellion unravels everyone around her. Strange, lyrical, unforgettable.", year: "2007" },
+  { title: "Normal People", author: "Sally Rooney", desc: "Two young people in Ireland orbit each other through school and university — drawn together, pushed apart, never quite free.", year: "2018" },
+  { title: "Educated", author: "Tara Westover", desc: "A memoir of growing up off-grid in survivalist Idaho, then teaching herself enough to walk into Cambridge.", year: "2018" },
+  { title: "Sapiens", author: "Yuval Noah Harari", desc: "A sweeping history of how an unremarkable ape came to dominate the planet — cognitive, agricultural, and scientific revolutions.", year: "2014" },
+  { title: "Circe", author: "Madeline Miller", desc: "The witch of Greek myth retold in her own voice — banished to an island, she discovers her own dangerous power.", year: "2018" },
+  { title: "The Overstory", author: "Richard Powers", desc: "Nine strangers, each summoned by trees, converge in a story about the slow intelligence of forests and the cost of seeing.", year: "2018" },
+  { title: "Exhalation", author: "Ted Chiang", desc: "Nine speculative tales that read like philosophical fables — about time, choice, memory, and what makes a mind.", year: "2019" },
+  { title: "The House of the Spirits", author: "Isabel Allende", desc: "Four generations of a Chilean family touched by clairvoyance, revolution, and tenderness — Allende's luminous debut.", year: "1982" },
+  { title: "Stoner", author: "John Williams", desc: "The quiet life of a Missouri farm boy who becomes an English professor — a novel that finds the extraordinary in the ordinary.", year: "1965" },
+  { title: "Never Let Me Go", author: "Kazuo Ishiguro", desc: "Three friends at an English boarding school slowly realise the purpose for which they were created. Devastating and restrained.", year: "2005" },
+  { title: "The Underground Railroad", author: "Colson Whitehead", desc: "A young woman flees a Georgia plantation on a literal underground railway — a brutal, magical reimagining of America.", year: "2016" },
+  { title: "A Gentleman in Moscow", author: "Amor Towles", desc: "A Russian count is sentenced to lifelong house arrest in a grand Moscow hotel. Three decades of history pass through its doors.", year: "2016" },
+  { title: "The Brief Wondrous Life of Oscar Wao", author: "Junot Díaz", desc: "An overweight Dominican-American boy dreams of love in New Jersey, while a family curse haunts his Caribbean past.", year: "2007" },
+  { title: "Convenience Store Woman", author: "Sayaka Murata", desc: "A 36-year-old Tokyo convenience store clerk is perfectly content — until the world insists she shouldn't be.", year: "2016" },
+  { title: "The Sympathizer", author: "Viet Thanh Nguyen", desc: "A communist spy embedded in a South Vietnamese general's household flees to Los Angeles. A scathing, brilliant Pulitzer winner.", year: "2015" },
+  { title: "Homegoing", author: "Yaa Gyasi", desc: "Two half-sisters in 18th-century Ghana — one married to a slaver, one sold into slavery — and seven generations of descendants.", year: "2016" },
+  { title: "The Goldfinch", author: "Donna Tartt", desc: "A boy survives a museum bombing and walks out with a small Dutch painting that will shape the rest of his life.", year: "2013" },
+  { title: "Born a Crime", author: "Trevor Noah", desc: "Growing up mixed-race in apartheid South Africa — a memoir that is by turns harrowing, hilarious, and full of love for his mother.", year: "2016" },
+  { title: "An Immense World", author: "Ed Yong", desc: "A tour of how animals perceive reality — through echolocation, electric fields, magnetism, and senses we cannot imagine.", year: "2022" },
+  { title: "The Power", author: "Naomi Alderman", desc: "Teenage girls discover they can release electric shocks from their fingertips. The world's power structures shift in months.", year: "2016" },
+  { title: "Piranesi", author: "Susanna Clarke", desc: "A man lives alone in an infinite labyrinth of statues and tides, keeping careful journals. Then a stranger appears.", year: "2020" },
+  { title: "Severance", author: "Ling Ma", desc: "An office worker in Manhattan keeps showing up to her job as a pandemic empties the city. Strange, deadpan, prescient.", year: "2018" },
+  { title: "Disgrace", author: "J. M. Coetzee", desc: "A disgraced Cape Town professor retreats to his daughter's farm — where post-apartheid South Africa exacts its own reckoning.", year: "1999" },
+  { title: "The Master and Margarita", author: "Mikhail Bulgakov", desc: "The devil arrives in Soviet Moscow with a talking black cat. A wild satire of Stalinist Russia and a love story across time.", year: "1967" }
+];
+
+function showLivre(b) {
+  if (!b) return;
+  var t = document.getElementById('livre-title');
+  var a = document.getElementById('livre-author');
+  var d = document.getElementById('livre-desc');
+  var m = document.getElementById('livre-meta');
+  var c = document.getElementById('livre-cover');
+  if (t) t.textContent = b.title || '';
+  if (a) a.textContent = b.author || '';
+  if (d) d.textContent = b.desc || '';
+  if (m) {
+    var bits = [];
+    if (b.year) bits.push('<span>' + esc(b.year) + '</span>');
+    if (b.pages) bits.push('<span>' + esc(b.pages) + ' pages</span>');
+    if (b.rating) bits.push('<span>★ ' + esc(b.rating) + '</span>');
+    if (b.subject) bits.push('<span>' + esc(b.subject) + '</span>');
+    m.innerHTML = bits.join('');
+  }
+  if (c) {
+    if (b.cover) {
+      c.style.backgroundImage = "url('" + b.cover.replace(/'/g, "\\'") + "')";
+      c.classList.remove('no-img');
+    } else {
+      c.style.backgroundImage = '';
+      c.classList.add('no-img');
+    }
+  }
+}
+
+function setLivreLoading(isLoading) {
+  var btn = document.querySelector('.livre-refresh');
+  if (!btn) return;
+  if (isLoading) {
+    if (!btn.dataset.label) btn.dataset.label = btn.textContent;
+    btn.textContent = '↻ …';
+    btn.disabled = true;
+    btn.style.opacity = '0.55';
+  } else {
+    btn.textContent = btn.dataset.label || '↻ Another Book';
+    btn.disabled = false;
+    btn.style.opacity = '';
+  }
+}
+
+function trimDesc(s) {
+  if (!s) return '';
+  s = String(s).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  if (s.length <= 220) return s;
+  var cut = s.slice(0, 220);
+  var lastSpace = cut.lastIndexOf(' ');
+  if (lastSpace > 150) cut = cut.slice(0, lastSpace);
+  return cut + '…';
+}
+
+var _seenBooks = {}; // de-dupe by title|author across refreshes in this session
+
+function _timeout(ms) {
+  return new Promise(function(_, reject) { setTimeout(function() { reject(new Error('timeout')); }, ms); });
+}
+
+/* ── Open Library: 30M+ works, CORS-friendly, no API key. ── */
+function fetchBookFromOpenLibrary() {
+  var subject = BOOK_SUBJECTS[Math.floor(Math.random() * BOOK_SUBJECTS.length)];
+  var offset = Math.floor(Math.random() * 600);
+  var url = 'https://openlibrary.org/search.json?subject=' + encodeURIComponent(subject)
+          + '&language=eng&limit=40&offset=' + offset
+          + '&fields=title,author_name,first_publish_year,number_of_pages_median,cover_i,ratings_average,first_sentence,key';
+
+  var apiCall = fetch(url, { mode: 'cors' })
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(data) {
+      if (!data || !data.docs || !data.docs.length) return null;
+      var docs = data.docs.slice().sort(function() { return Math.random() - 0.5; });
+      for (var i = 0; i < docs.length; i++) {
+        var d = docs[i];
+        if (!d.title || !d.author_name || !d.author_name.length) continue;
+        var key = (d.title + '|' + d.author_name.join(',')).toLowerCase();
+        if (_seenBooks[key]) continue;
+        _seenBooks[key] = 1;
+        var cover = d.cover_i
+          ? 'https://covers.openlibrary.org/b/id/' + d.cover_i + '-M.jpg'
+          : '';
+        var desc = '';
+        if (d.first_sentence) {
+          desc = Array.isArray(d.first_sentence) ? d.first_sentence[0] : d.first_sentence;
+          desc = trimDesc(desc);
+        }
+        return {
+          title: d.title,
+          author: d.author_name.join(', '),
+          desc: desc,
+          year: d.first_publish_year ? String(d.first_publish_year) : '',
+          pages: d.number_of_pages_median || '',
+          rating: d.ratings_average ? d.ratings_average.toFixed(1) : '',
+          cover: cover,
+          subject: subject,
+          _needsDesc: !desc
+        };
+      }
+      return null;
+    })
+    .catch(function() { return null; });
+
+  return Promise.race([apiCall, _timeout(7000).then(function() { return null; }).catch(function() { return null; })]);
+}
+
+/* ── Google Books: secondary source. ── */
+function fetchBookFromGoogle() {
+  var subject = BOOK_SUBJECTS[Math.floor(Math.random() * BOOK_SUBJECTS.length)];
+  var startIndex = Math.floor(Math.random() * 400);
+  var orderBy = Math.random() < 0.5 ? 'relevance' : 'newest';
+  var url = 'https://www.googleapis.com/books/v1/volumes?q=subject:' + encodeURIComponent(subject)
+          + '&langRestrict=en&orderBy=' + orderBy + '&maxResults=40&startIndex=' + startIndex
+          + '&printType=books&fields=items(volumeInfo(title,authors,description,publishedDate,pageCount,averageRating,language,imageLinks,categories))';
+
+  var apiCall = fetch(url, { mode: 'cors' })
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(data) {
+      if (!data || !data.items || !data.items.length) return null;
+      var items = data.items.slice().sort(function() { return Math.random() - 0.5; });
+      for (var i = 0; i < items.length; i++) {
+        var v = items[i].volumeInfo || {};
+        if (v.language && v.language !== 'en') continue;
+        if (!v.title || !v.description) continue;
+        if (v.description.length < 40) continue;
+        var key = (v.title + '|' + ((v.authors || []).join(','))).toLowerCase();
+        if (_seenBooks[key]) continue;
+        _seenBooks[key] = 1;
+        var cover = '';
+        if (v.imageLinks) {
+          cover = v.imageLinks.thumbnail || v.imageLinks.smallThumbnail || '';
+          if (cover) cover = cover.replace(/^http:/, 'https:');
+        }
+        return {
+          title: v.title,
+          author: (v.authors && v.authors.length) ? v.authors.join(', ') : 'Unknown author',
+          desc: trimDesc(v.description),
+          year: (v.publishedDate || '').slice(0, 4),
+          pages: v.pageCount || '',
+          rating: v.averageRating ? v.averageRating.toFixed(1) : '',
+          cover: cover,
+          subject: subject
+        };
+      }
+      return null;
+    })
+    .catch(function() { return null; });
+
+  return Promise.race([apiCall, _timeout(7000).then(function() { return null; }).catch(function() { return null; })]);
+}
+
+/* Best-effort: pull a description from Google Books when Open Library had none. */
+function enrichDescription(book) {
+  if (!book || !book._needsDesc) return Promise.resolve(book);
+  var firstAuthor = book.author ? book.author.split(',')[0].trim() : '';
+  var q = 'intitle:' + book.title + (firstAuthor ? '+inauthor:' + firstAuthor : '');
+  var url = 'https://www.googleapis.com/books/v1/volumes?q=' + encodeURIComponent(q)
+          + '&langRestrict=en&maxResults=3&fields=items(volumeInfo(description))';
+  var call = fetch(url, { mode: 'cors' })
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(data) {
+      if (data && data.items) {
+        for (var i = 0; i < data.items.length; i++) {
+          var v = data.items[i].volumeInfo || {};
+          if (v.description && v.description.length >= 40) {
+            book.desc = trimDesc(v.description);
+            break;
+          }
+        }
+      }
+      return book;
+    })
+    .catch(function() { return book; });
+  return Promise.race([call, _timeout(3500).then(function() { return book; }).catch(function() { return book; })]);
+}
+
+/* Race Open Library against Google Books — first non-null wins.
+   Retry twice with fresh subjects, then fall back to the curated list. */
+function fetchBookFromAPI(attempt) {
+  attempt = attempt || 0;
+  return new Promise(function(resolve) {
+    var settled = false;
+    var pending = 2;
+    function onResult(b) {
+      pending--;
+      if (settled) return;
+      if (b) { settled = true; resolve(b); return; }
+      if (pending === 0) resolve(null);
+    }
+    fetchBookFromOpenLibrary().then(onResult);
+    fetchBookFromGoogle().then(onResult);
+  }).then(function(b) {
+    if (!b && attempt < 2) return fetchBookFromAPI(attempt + 1);
+    return b ? enrichDescription(b) : null;
+  });
+}
+
+function showLivreLoading() {
+  var t = document.getElementById('livre-title');
+  var a = document.getElementById('livre-author');
+  var d = document.getElementById('livre-desc');
+  var m = document.getElementById('livre-meta');
+  var c = document.getElementById('livre-cover');
+  if (t) t.textContent = 'Choisir un livre…';
+  if (a) a.textContent = '';
+  if (d) d.textContent = '';
+  if (m) m.innerHTML = '';
+  if (c) { c.style.backgroundImage = ''; c.classList.add('no-img'); }
+}
+
+function renderLivre() {
+  showLivreLoading();
+  fetchBookFromAPI().then(function(b) {
+    if (b) {
+      showLivre(b);
+    } else {
+      // Only when both APIs fail completely.
+      showLivre(FALLBACK_BOOKS[livreIdx]);
+    }
+  });
+}
+
+function nextLivreFallback() {
+  livreIdx = (livreIdx + 1) % FALLBACK_BOOKS.length;
+  showLivre(FALLBACK_BOOKS[livreIdx]);
+}
+
+function nextLivre() {
+  setLivreLoading(true);
+  fetchBookFromAPI().then(function(b) {
+    if (b) {
+      showLivre(b);
+    } else {
+      nextLivreFallback();
+    }
+    setLivreLoading(false);
+  });
+}
+
+function persist() {
+  try {
+    localStorage.setItem('mays_vocab_v3', JSON.stringify(vocabBank));
+    localStorage.setItem('mays_journal_v3', JSON.stringify(journalEntries));
+  } catch(e) {}
+}
+
+function toast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 2400);
+}
+
+function switchTab(tab) {
+  ['journal','lookup','vocab','books'].forEach(function(t, i) {
+    document.getElementById('section-' + t).classList.toggle('active', t === tab);
+    document.querySelectorAll('.tab-btn')[i].classList.toggle('active', t === tab);
+  });
+  if (tab === 'vocab') renderVocab();
+  if (tab === 'journal') renderJournal();
+  if (tab === 'books') renderBookLog();
+}
+
+var _cachedFrVoice = null;
+function _pickFrVoice() {
+  if (!window.speechSynthesis) return null;
+  var voices = window.speechSynthesis.getVoices();
+  if (!voices || !voices.length) return null;
+  for (var i = 0; i < voices.length; i++) {
+    if (voices[i].lang === 'fr-FR') return voices[i];
+  }
+  for (var j = 0; j < voices.length; j++) {
+    if (voices[j].lang && voices[j].lang.indexOf('fr') === 0) return voices[j];
+  }
+  return null;
+}
+
+function speak(word, lang) {
+  if (!window.speechSynthesis || !word) return;
+  window.speechSynthesis.cancel();
+  var u = new SpeechSynthesisUtterance(word);
+  u.lang = lang || 'fr-FR';
+  u.rate = 0.82;
+  u.pitch = 1.0;
+  if (!_cachedFrVoice) _cachedFrVoice = _pickFrVoice();
+  if (_cachedFrVoice) u.voice = _cachedFrVoice;
+  window.speechSynthesis.speak(u);
+}
+
+// Pre-load voices (needed for Safari). Cache the French voice once available.
+if (window.speechSynthesis && window.speechSynthesis.onvoiceschanged !== undefined) {
+  window.speechSynthesis.onvoiceschanged = function() { _cachedFrVoice = _pickFrVoice(); };
+}
+
+
+
+
+function isFrenchWord(q) {
+  if (!q) return false;
+  var s = q.trim().toLowerCase();
+  // French diacritics — strong signal
+  if (/[àâäéèêëîïôùûüçœæ]/.test(s)) return true;
+  // French articles / pronouns / determiners
+  if (/^(le |la |l'|l'|les |un |une |des |du |au |aux |de la |de l'|je |tu |il |elle |on |nous |vous |ils |elles |mon |ma |mes |ton |ta |tes |son |sa |ses |ce |cet |cette |ces |notre |votre |leur )/.test(s)) return true;
+  // Common French-only function words
+  if (/\b(est|sont|était|étaient|c'est|n'est|qu'il|qu'elle|donc|alors|déjà|merci|bonjour|bonsoir|où|pourquoi|combien|aussi|encore)\b/.test(s)) return true;
+  return false;
+}
+
+/* ── MAIN SEARCH: live APIs, works both FR→EN and EN→FR ── */
+function looksFrench(s) {
+  if (!s) return false;
+  if (/[àâäéèêëîïôùûüç]/i.test(s)) return true;
+  if (/\b(le|la|les|un|une|des|du|de|qui|que|est|sont|dans|sur|avec|pour|par|au|aux|ce|cette|son|sa|ses)\b/i.test(s)) return true;
+  return false;
+}
+function translateToFr(text) {
+  if (!text || text.length < 2) return Promise.resolve('');
+  var url = 'https://api.mymemory.translated.net/get?q=' + encodeURIComponent(text) + '&langpair=en|fr&de=carnet@example.com';
+  var call = fetch(url, { mode: 'cors' })
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .catch(function() { return null; });
+  return Promise.race([call, _timeout(6000).then(function() { return null; }).catch(function() { return null; })])
+    .then(function(mm) {
+      if (!mm || !mm.responseData) return '';
+      var t = mm.responseData.translatedText || '';
+      if (!t) return '';
+      if (t === t.toUpperCase() && t.length > 4) return '';
+      if (t.toLowerCase().trim() === text.toLowerCase().trim()) return '';
+      if (/NO QUERY SPECIFIED|MYMEMORY WARNING/i.test(t)) return '';
+      return t;
+    });
+}
+
+var _searchToken = 0;
+var _searchSafetyTimer = null;
+function doSearch() {
+  var q = document.getElementById('searchInput').value.trim();
+  if (!q) return;
+  document.getElementById('resultCard').classList.remove('active');
+  document.getElementById('errorCard').classList.remove('active');
+  document.getElementById('loading').classList.add('active');
+
+  // Bump token so any still-pending fetches from a previous search
+  // are ignored when they eventually resolve.
+  _searchToken++;
+  var myToken = _searchToken;
+  var isCurrent = function() { return myToken === _searchToken; };
+
+  // Hard safety net — if every network call hangs, force the loading
+  // spinner off after 20s so the UI never wedges.
+  if (_searchSafetyTimer) clearTimeout(_searchSafetyTimer);
+  _searchSafetyTimer = setTimeout(function() {
+    if (!isCurrent()) return;
+    document.getElementById('loading').classList.remove('active');
+    if (!document.getElementById('resultCard').classList.contains('active')) {
+      var ec = document.getElementById('errorCard');
+      ec.textContent = 'The dictionary is slow to respond right now. Please try again.';
+      ec.classList.add('active');
+    }
+  }, 20000);
+
+  // Probe both Wiktionaries in parallel — FR for POS markers, EN for
+  // language detection. Together they catch plain French nouns like
+  // "chien" or "fleur" whose isFrenchWord heuristic alone can miss.
+  // Strip elided French articles (l', d', n', m', t', s', c', qu', j', jusqu')
+  // and space-articles BEFORE stripping punctuation, otherwise "l'amour"
+  // becomes "lamour" and Wiktionary 404s.
+  var queryWord = q.toLowerCase()
+    .replace(/^(l['’]|d['’]|n['’]|m['’]|t['’]|s['’]|c['’]|qu['’]|j['’]|jusqu['’])/i, '')
+    .replace(/^(le |la |les |un |une |des |du |au |aux |de la |de l['’]|the |a |an )/i, '')
+    .split(/\s+/).pop()
+    .replace(/[.,;!?"]/g, '');
+  var probeFrUrl = 'https://fr.wiktionary.org/api/rest_v1/page/summary/' + encodeURIComponent(queryWord);
+  var probeEnUrl = 'https://en.wiktionary.org/api/rest_v1/page/summary/' + encodeURIComponent(queryWord);
+  // Timeout-wrapped fetch — caps every dictionary call at 7s so a single
+  // slow API can never hang the whole loading state.
+  var fetchJson = function(url) {
+    var call = fetch(url, { mode: 'cors' })
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .catch(function() { return null; });
+    return Promise.race([call, _timeout(7000).then(function() { return null; }).catch(function() { return null; })]);
+  };
+
+  Promise.all([fetchJson(probeFrUrl), fetchJson(probeEnUrl)])
+    .then(function(probes) {
+      var frProbe = probes[0];
+      var enProbe = probes[1];
+      var isFR = isFrenchWord(q);
+      var frHasContent = frProbe && frProbe.type === 'standard' && frProbe.extract && frProbe.extract.length > 5;
+      var enHasContent = enProbe && enProbe.type === 'standard' && enProbe.extract && enProbe.extract.length > 5;
+      var frFullText = frHasContent ? ((frProbe.extract || '') + ' ' + (frProbe.description || '')).toLowerCase() : '';
+      var enDesc = enHasContent ? ((enProbe.description || '') + ' ' + (enProbe.extract || '')).toLowerCase() : '';
+
+      // Override heuristic when EN Wiktionary description mentions "french"
+      if (!isFR && enHasContent && /\bfrench\b/.test(enDesc)) {
+        isFR = true;
+      }
+      // Override heuristic when FR Wiktionary returns clear French POS markers
+      if (!isFR && frHasContent) {
+        if (/\b(masculin|féminin|nom commun|nom propre|verbe|adjectif|adverbe|préposition|pronom)\b/.test(frFullText)) {
+          isFR = true;
+        }
+      }
+      // Last-resort: FR has a real entry and EN does not — likely French
+      if (!isFR && frHasContent && !enHasContent) {
+        isFR = true;
+      }
+
+      // Translate to the other language
+      var langpair = isFR ? 'fr|en' : 'en|fr';
+      var mmUrl = 'https://api.mymemory.translated.net/get?q=' + encodeURIComponent(q) + '&langpair=' + langpair + '&de=carnet@example.com';
+
+      return fetchJson(mmUrl)
+        .then(function(mm) {
+          if (!isCurrent()) return;
+          var translated = '';
+          if (mm && mm.responseData && mm.responseData.translatedText) {
+            translated = mm.responseData.translatedText;
+            if (translated === translated.toUpperCase() && translated.length > 3) translated = '';
+            if (/NO QUERY SPECIFIED|MYMEMORY WARNING/i.test(translated)) translated = '';
+          }
+
+          var frQuery = isFR ? q : translated;
+          var enQuery = isFR ? translated : q;
+
+          // If translation totally failed, bail out cleanly instead of rendering an empty card.
+          if (!frQuery || !enQuery) {
+            if (!isCurrent()) return;
+            if (_searchSafetyTimer) { clearTimeout(_searchSafetyTimer); _searchSafetyTimer = null; }
+            document.getElementById('loading').classList.remove('active');
+            var ec = document.getElementById('errorCard');
+            ec.textContent = 'Sorry — I couldn’t find a translation for "' + q + '". Try a different spelling, or check your internet connection.';
+            ec.classList.add('active');
+            return;
+          }
+
+          // Gender trick: translate BOTH "the X" → "le/la X" AND "a X" → "un/une X".
+          // The "a/an" probe catches vowel-starting French nouns where "le/la" elides to "l'".
+          var enForGender = (isFR ? enQuery : q).replace(/^(the |a |an )/i, '').trim();
+          var genderThePromise, genderAPromise;
+          if (enForGender && enForGender.length > 0 && enForGender.length < 50) {
+            var gTheUrl = 'https://api.mymemory.translated.net/get?q=' + encodeURIComponent('the ' + enForGender) + '&langpair=en|fr&de=carnet@example.com';
+            var gAUrl   = 'https://api.mymemory.translated.net/get?q=' + encodeURIComponent('a ' + enForGender)   + '&langpair=en|fr&de=carnet@example.com';
+            genderThePromise = fetchJson(gTheUrl);
+            genderAPromise   = fetchJson(gAUrl);
+          } else {
+            genderThePromise = Promise.resolve(null);
+            genderAPromise   = Promise.resolve(null);
+          }
+
+          // EN Wiktionary — secondary gender/POS source. Strip elided/space
+          // articles so single-word "l'amour" maps to the "amour" entry.
+          var wiktEnLookup = (frQuery || '').toLowerCase()
+            .replace(/^(l['’]|d['’]|n['’]|m['’]|t['’]|s['’]|c['’]|qu['’]|j['’])/i, '')
+            .replace(/^(le |la |les |un |une |des |du )/i, '')
+            .split(/\s+/).pop();
+          var wiktEnUrl = 'https://en.wiktionary.org/api/rest_v1/page/summary/' + encodeURIComponent(wiktEnLookup);
+          var wiktEnPromise = fetchJson(wiktEnUrl);
+
+          // FR Wiktionary probed with TRANSLATED French word (for EN→FR lookups).
+          // Without this, EN→FR searches never get French definitions or POS markers.
+          var translatedFrWord = (!isFR && frQuery)
+            ? frQuery.replace(/^(le |la |l'|l’|les |un |une )/i, '').split(/\s+/).pop().toLowerCase()
+            : '';
+          var frWiktTransPromise = translatedFrWord
+            ? fetchJson('https://fr.wiktionary.org/api/rest_v1/page/summary/' + encodeURIComponent(translatedFrWord))
+            : Promise.resolve(null);
+
+          // Free Dictionary — English definition + example (English IPA is intentionally discarded)
+          var enLookup = (isFR ? enQuery : q).replace(/^(the |a |an )/i, '').trim();
+          var dictUrl = 'https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(enLookup);
+          var dictPromise = fetchJson(dictUrl);
+
+          return Promise.all([genderThePromise, wiktEnPromise, dictPromise, genderAPromise, frWiktTransPromise]).then(function(results) {
+            if (!isCurrent()) return;
+            var genderMM    = results[0];
+            var wiktEn      = results[1];
+            var dictData    = results[2];
+            var genderMMa   = results[3];
+            var frWiktTrans = results[4];
+
+            // Merge the translated-word FR Wiktionary probe into frFullText so gender/POS regex matchers see it.
+            var frTransHasContent = frWiktTrans && frWiktTrans.type === 'standard' && frWiktTrans.extract && frWiktTrans.extract.length > 5;
+            if (frTransHasContent) {
+              var transText = ((frWiktTrans.extract || '') + ' ' + (frWiktTrans.description || '')).toLowerCase();
+              frFullText = frFullText ? (frFullText + ' ' + transText) : transText;
+              frHasContent = true;
+              if (!frProbe || frProbe.type !== 'standard' || !frProbe.extract) frProbe = frWiktTrans;
+            }
+
+            // ── Gender — most reliable signal first ──
+            var gender = 'none';
+            if (genderMM && genderMM.responseData && genderMM.responseData.translatedText) {
+              var wa = genderMM.responseData.translatedText.toLowerCase().trim();
+              if (/^le\s/.test(wa))       gender = 'masculine';
+              else if (/^la\s/.test(wa))  gender = 'feminine';
+              else if (/^un\s/.test(wa))  gender = 'masculine';
+              else if (/^une\s/.test(wa)) gender = 'feminine';
+            }
+            // Fallback: "a X" probe catches words where "le/la" elided to "l'".
+            if (gender === 'none' && genderMMa && genderMMa.responseData && genderMMa.responseData.translatedText) {
+              var wb = genderMMa.responseData.translatedText.toLowerCase().trim();
+              if (/^un\s/.test(wb))       gender = 'masculine';
+              else if (/^une\s/.test(wb)) gender = 'feminine';
+              else if (/^le\s/.test(wb))  gender = 'masculine';
+              else if (/^la\s/.test(wb))  gender = 'feminine';
+            }
+            if (gender === 'none' && wiktEn && wiktEn.description) {
+              var ed = wiktEn.description.toLowerCase();
+              if (/\bmasculine\b/.test(ed))     gender = 'masculine';
+              else if (/\bfeminine\b/.test(ed)) gender = 'feminine';
+            }
+            if (gender === 'none' && frHasContent) {
+              if (/\bmasculin\b/.test(frFullText) && !/\bféminin\b/.test(frFullText))      gender = 'masculine';
+              else if (/\bféminin\b/.test(frFullText) && !/\bmasculin\b/.test(frFullText)) gender = 'feminine';
+            }
+            // Article in the French query itself — strongest override
+            var frLower = (frQuery || '').toLowerCase();
+            if (/^le\s/.test(frLower))       gender = 'masculine';
+            else if (/^la\s/.test(frLower))  gender = 'feminine';
+            else if (/^un\s/.test(frLower))  gender = 'masculine';
+            else if (/^une\s/.test(frLower)) gender = 'feminine';
+
+            // ── POS ──
+            var pos = 'noun';
+            var posExplicit = false;
+            if (frHasContent) {
+              if (/\bverbe\b/.test(frFullText))         { pos = 'verb';      posExplicit = true; }
+              else if (/\badjectif\b/.test(frFullText)) { pos = 'adjective'; posExplicit = true; }
+              else if (/\badverbe\b/.test(frFullText))  { pos = 'adverb';    posExplicit = true; }
+              else if (/\bnom\b/.test(frFullText))      { pos = 'noun'; }
+            }
+            if (wiktEn && wiktEn.description) {
+              var ed2 = wiktEn.description.toLowerCase();
+              if (/\bverb\b/.test(ed2))           { pos = 'verb';      posExplicit = true; }
+              else if (/\badjective\b/.test(ed2)) { pos = 'adjective'; posExplicit = true; }
+              else if (/\badverb\b/.test(ed2))    { pos = 'adverb';    posExplicit = true; }
+            }
+            // If a non-noun POS is explicitly attested, drop the gender (gender belongs to nouns).
+            if (gender !== 'none' && posExplicit && pos !== 'noun') gender = 'none';
+            if (gender !== 'none') pos = 'noun';
+
+            // ── English definition + example (English IPA from dictionaryapi.dev is discarded — the headline word is French) ──
+            var defEn = '';
+            var exampleEn = '';
+            if (dictData && dictData[0]) {
+              var meanings = dictData[0].meanings || [];
+              if (meanings[0]) {
+                var dictPos = (meanings[0].partOfSpeech || '').toLowerCase();
+                if (dictPos && gender === 'none') pos = dictPos;
+                var defs = meanings[0].definitions || [];
+                if (defs[0]) {
+                  if (defs[0].definition) defEn = defs[0].definition;
+                  if (defs[0].example)    exampleEn = defs[0].example;
+                }
+              }
+            }
+
+            // ── French IPA — extracted from FR Wiktionary extract (between slashes or backslashes) ──
+            var phonetic = '';
+            if (frHasContent && frProbe.extract) {
+              var ipaMatch = frProbe.extract.match(/\\([^\\\n]{1,40})\\/);
+              if (!ipaMatch) ipaMatch = frProbe.extract.match(/\/([^\/\n\s][^\/\n]{0,38})\//);
+              if (ipaMatch && ipaMatch[1]) phonetic = '/' + ipaMatch[1].trim() + '/';
+            }
+
+            // ── French definition + example from FR Wiktionary ──
+            var defFr = '';
+            var exampleFr = '';
+            if (frHasContent && frProbe.extract) {
+              var sentences = frProbe.extract.split(/[.!?]/).map(function(s) { return s.trim(); }).filter(function(s) { return s.length > 8; });
+              if (sentences[0] && sentences[0].length >= 6) defFr = sentences[0] + '.';
+              var wordBase = (frQuery || '').replace(/^(le |la |l'|l’|les |un |une |des )/i, '').split(/\s+/).pop().toLowerCase();
+              if (wordBase && wordBase.length >= 2) {
+                for (var si = 1; si < sentences.length; si++) {
+                  if (sentences[si].toLowerCase().indexOf(wordBase) >= 0) {
+                    exampleFr = sentences[si] + '.';
+                    break;
+                  }
+                }
+              }
+            }
+
+            // Always make the "Définition & meaning" block bilingual.
+            // Trust FR Wiktionary only if its text actually looks French;
+            // otherwise translate the English definition.
+            var frDefPromise = (looksFrench(defFr) && defFr.length >= 6) ? Promise.resolve(defFr)
+              : (defEn ? translateToFr(defEn) : Promise.resolve(''));
+            var exFrPromise = (looksFrench(exampleFr) && exampleFr.length >= 6) ? Promise.resolve(exampleFr)
+              : (exampleEn ? translateToFr(exampleEn) : Promise.resolve(exampleFr || ''));
+
+            return Promise.all([frDefPromise, exFrPromise]).then(function(vals) {
+              if (!isCurrent()) return;
+              var frFinal   = vals[0] || '';
+              var exFrFinal = vals[1] || '';
+
+              var result = {
+                word_fr: frQuery,
+                word_en: enQuery,
+                phonetic: phonetic,
+                gender: gender,
+                pos: pos,
+                translation_fr: frFinal,
+                translation_en: defEn || enQuery,
+                example_fr: exFrFinal,
+                example_en: exampleEn || '',
+                _source: ''
+              };
+
+              if (_searchSafetyTimer) { clearTimeout(_searchSafetyTimer); _searchSafetyTimer = null; }
+              document.getElementById('loading').classList.remove('active');
+              currentResult = result;
+              renderResult(result);
+            });
+          });
+        });
+    })
+    .catch(function(err) {
+      if (!isCurrent()) return;
+      if (_searchSafetyTimer) { clearTimeout(_searchSafetyTimer); _searchSafetyTimer = null; }
+      document.getElementById('loading').classList.remove('active');
+      var ec = document.getElementById('errorCard');
+      ec.textContent = 'Could not reach the dictionary. Please check your internet connection and try again.';
+      ec.classList.add('active');
+    });
+}
+
+
+function renderResult(d) {
+  var frWord = d.word_fr || '';
+  var enWord = d.word_en || '';
+
+  document.getElementById('r-word').textContent = frWord || enWord;
+  // Show English translation under the French word
+  var wordEnSmall = document.getElementById('r-word-en-small');
+  if(wordEnSmall) wordEnSmall.textContent = (frWord && enWord && frWord !== enWord) ? enWord : '';
+
+  document.getElementById('r-phonetic').textContent = d.phonetic || '';
+  var posEl = document.getElementById('r-pos');
+  if (posEl) posEl.style.display = 'none';
+
+  // Meaning — FR definition + EN translation
+  var frDef = d.translation_fr || '';
+  var enDef = d.translation_en || '';
+  if(frDef && frDef.toLowerCase() === frWord.toLowerCase()) frDef = '';
+  if(enDef && enDef.toLowerCase() === enWord.toLowerCase() && frDef) enDef = '';
+  var rFr = document.getElementById('r-fr');
+  var rEn = document.getElementById('r-en');
+  if(rFr) { rFr.textContent = frDef; rFr.style.display = frDef ? '' : 'none'; }
+  if(rEn) { rEn.textContent = enDef; rEn.style.display = enDef ? '' : 'none'; }
+  var transRow = document.getElementById('r-trans-row');
+  if(transRow) transRow.style.display = (frDef || enDef) ? '' : 'none';
+
+  // Example sentences
+  var exFr = d.example_fr || '';
+  var exEn = d.example_en || '';
+  document.getElementById('r-ex-fr').textContent = exFr;
+  // Only show English translation of example if it exists
+  var exEnEl = document.getElementById('r-ex-en');
+  if(exEnEl) { exEnEl.textContent = exEn; exEnEl.style.display = exEn ? '' : 'none'; }
+  var exBlock = document.getElementById('r-example-block');
+  if(exBlock) exBlock.style.display = exFr ? '' : 'none';
+
+  // Quote
+  // Quotes removed — definition is shown instead
+
+  // Source badge
+  var srcBadge = document.getElementById('r-db-source');
+  if(srcBadge) {
+    if(d._source) { srcBadge.textContent = '✦ ' + d._source; srcBadge.style.display='block'; }
+    else { srcBadge.style.display='none'; }
+  }
+
+  // Gender badge
+  var gb = document.getElementById('r-gender-badge');
+  gb.className = 'badge'; gb.textContent = '';
+  if(d.gender === 'masculine') { gb.textContent = 'Masculin'; gb.classList.add('badge-masc'); gb.style.display = ''; }
+  else if(d.gender === 'feminine') { gb.textContent = 'Féminin'; gb.classList.add('badge-fem'); gb.style.display = ''; }
+  else { gb.style.display = 'none'; }
+
+  // Gender descriptive line
+  var gLine = document.getElementById('r-gender-line');
+  var gLabel = document.getElementById('r-gender-label');
+  if(gLine && gLabel) {
+    if(d.gender === 'masculine') {
+      gLabel.textContent = '— masculine noun (un/le)';
+      gLine.style.display = 'block';
+    } else if(d.gender === 'feminine') {
+      gLabel.textContent = '— feminine noun (une/la)';
+      gLine.style.display = 'block';
+    } else {
+      gLine.style.display = 'none';
+    }
+  }
+
+  document.getElementById('r-speak').onclick = function() { speak(d.word_fr || '', 'fr-FR'); };
+  document.getElementById('resultCard').classList.add('active');
+}
+
+function saveFromResult() {
+  if (!currentResult) return;
+  var d = currentResult;
+  document.getElementById('v-fr').value     = d.word_fr || '';
+  document.getElementById('v-en').value     = d.translation_en || '';
+  document.getElementById('v-gender').value = d.gender || 'none';
+  document.getElementById('v-pos').value    = d.pos || 'noun';
+  document.getElementById('v-phonetic').value = d.phonetic || '';
+  document.getElementById('v-note').value   = '';
+  switchTab('vocab');
+  toast('Details filled in — add a note and save.');
+}
+
+/* ──────────── VOCAB BANK ──────────── */
+function addWord() {
+  var fr = document.getElementById('v-fr').value.trim();
+  var en = document.getElementById('v-en').value.trim();
+  if (!fr || !en) { toast('Please enter both French and English.'); return; }
+  var w = {
+    id: Date.now(), fr: fr, en: en,
+    gender: document.getElementById('v-gender').value,
+    pos: document.getElementById('v-pos').value,
+    cat: document.getElementById('v-cat').value,
+    note: document.getElementById('v-note').value.trim(),
+    phonetic: document.getElementById('v-phonetic').value,
+    qfr: document.getElementById('v-qfr').value,
+    qen: document.getElementById('v-qen').value,
+    src: document.getElementById('v-src').value,
+    date: new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' })
+  };
+  vocabBank.unshift(w); persist(); renderVocab();
+  ['v-fr','v-en','v-note','v-phonetic','v-qfr','v-qen','v-src'].forEach(function(id) { document.getElementById(id).value = ''; });
+  document.getElementById('v-gender').value = 'none';
+  document.getElementById('v-pos').value = 'noun';
+  document.getElementById('v-cat').value = 'General';
+  toast('Saved to your collection.');
+}
+
+function deleteWord(id) {
+  vocabBank = vocabBank.filter(function(w) { return w.id !== id; });
+  persist(); renderVocab(); toast('Word removed.');
+}
+
+var _vocabDebounceTimer = null;
+function renderVocabDebounced() {
+  if (_vocabDebounceTimer) clearTimeout(_vocabDebounceTimer);
+  _vocabDebounceTimer = setTimeout(renderVocab, 140);
+}
+
+function renderVocab() {
+  var s  = (document.getElementById('f-search').value || '').toLowerCase();
+  var fg = document.getElementById('f-gender').value;
+  var fp = document.getElementById('f-pos').value;
+  var fc = document.getElementById('f-cat').value;
+
+  var list = vocabBank.filter(function(w) {
+    if (s && w.fr.toLowerCase().indexOf(s) < 0 && w.en.toLowerCase().indexOf(s) < 0) return false;
+    if (fg && w.gender !== fg) return false;
+    if (fp && w.pos !== fp) return false;
+    if (fc && w.cat !== fc) return false;
+    return true;
+  });
+
+  document.getElementById('vocab-count').textContent =
+    list.length + (list.length === 1 ? ' word' : ' words') + ' in your collection';
+
+  var el = document.getElementById('vocab-list');
+  if (list.length === 0) {
+    el.innerHTML = '<div class="vocab-empty"><p>' + (vocabBank.length === 0
+      ? 'Your collection is empty. Look up a word and save it here.'
+      : 'No words match your filters.') + '</p></div>';
+    return;
+  }
+
+  el.innerHTML = list.map(function(w) {
+    var gb = w.gender === 'masculine' ? '<span class="badge badge-masc">Masculin</span>'
+           : w.gender === 'feminine'  ? '<span class="badge badge-fem">Féminin</span>' : '';
+    var noteHtml = w.note
+      ? '<div class="vocab-note"><p class="vocab-note-label">My Note</p><p class="vocab-note-text">' + esc(w.note) + '</p></div>' : '';
+    var phonHtml = w.phonetic ? '<p class="vocab-phonetic">' + esc(w.phonetic) + '</p>' : '';
+
+    return '<div class="vocab-card">' +
+      '<div class="vocab-card-top">' +
+        '<div class="vocab-word-row">' +
+          '<span class="vocab-word">' + esc(w.fr) + '</span>' +
+          '<button class="vocab-speak" data-fr="' + esc(w.fr) + '" onclick="speak(this.getAttribute(\'data-fr\'),\'fr-FR\')" title="Listen">🔊</button>' +
+        '</div>' +
+        '<button class="vocab-delete" onclick="deleteWord(' + w.id + ')">Remove</button>' +
+      '</div>' +
+      '<div class="vocab-badges">' + gb +
+        '<span class="badge badge-pos">' + esc(w.pos) + '</span>' +
+        '<span class="badge badge-cat">' + esc(w.cat) + '</span>' +
+      '</div>' +
+      phonHtml +
+      '<p class="vocab-trans">' + esc(w.en) + '</p>' +
+      noteHtml +
+      '<p class="vocab-date">' + esc(w.date) + '</p>' +
+    '</div>';
+  }).join('');
+}
+
+/* ──────────── JOURNAL ──────────── */
+function setJournalDate() {
+  var d = new Date();
+  document.getElementById('j-date').textContent =
+    d.toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+}
+
+function renderPrompt() {
+  var p = PROMPTS[promptIdx];
+  document.getElementById('j-prompt-fr').textContent = p.fr;
+  document.getElementById('j-prompt-en').textContent = p.en;
+}
+
+function nextPrompt() {
+  promptIdx = (promptIdx + 1) % PROMPTS.length;
+  renderPrompt();
+}
+
+function pickMood(btn) {
+  document.querySelectorAll('.mood-btn').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  selectedMood = btn.getAttribute('data-mood');
+}
+
+function pickCat(btn) {
+  document.querySelectorAll('.cat-btn').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  selectedCat = btn.getAttribute('data-cat');
+}
+
+var CAT_EMOJI = {
+  'Réflexion':'💭','Gratitude':'🌱','Rêves':'🌙','Lâcher prise':'🍃',
+  'Petites victoires':'✨','Inquiétudes':'🌧️','Souvenir':'📖','Écriture libre':'✏️'
+};
+
+function saveEntry() {
+  var text = document.getElementById('j-text').value.trim();
+  if (!text) { toast('Write a few words first.'); return; }
+  var title = document.getElementById('j-title').value.trim();
+  var entry = {
+    id: Date.now(),
+    title: title,
+    text: text,
+    mood: selectedMood,
+    cat: selectedCat,
+    prompt: PROMPTS[promptIdx].fr,
+    date: new Date().toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' }),
+    time: new Date().toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' })
+  };
+  journalEntries.unshift(entry); persist();
+  document.getElementById('j-text').value = '';
+  document.getElementById('j-title').value = '';
+  renderJournal();
+  toast('Entry saved — bien écrit !');
+}
+
+function deleteEntry(id) {
+  journalEntries = journalEntries.filter(function(e) { return e.id !== id; });
+  persist(); renderJournal(); toast('Entry removed.');
+}
+
+function renderJournal() {
+  var lbl = document.getElementById('j-entries-label');
+  var el  = document.getElementById('journal-list');
+  var exportBar = document.getElementById('journal-export-bar');
+  if (journalEntries.length === 0) {
+    lbl.textContent = '';
+    if (exportBar) exportBar.style.display = 'none';
+    el.innerHTML = '<div class="vocab-empty"><p>No entries yet. Begin with your first sentence above.</p></div>';
+    return;
+  }
+  if (exportBar) exportBar.style.display = 'flex';
+  lbl.textContent = journalEntries.length + (journalEntries.length === 1 ? ' entry' : ' entries');
+  el.innerHTML = journalEntries.map(function(e) {
+    var catHtml = e.cat
+      ? '<span class="je-cat"><span class="cat-emoji">' + (CAT_EMOJI[e.cat] || '✏️') + '</span>' + esc(e.cat) + '</span>'
+      : '';
+    var titleHtml = e.title ? '<p class="je-title">' + esc(e.title) + '</p>' : '';
+    var textHtml = esc(e.text).replace(/\n/g, '<br>');
+    return '<div class="journal-entry">' +
+      '<div class="je-meta">' +
+        '<span class="je-date">' + esc(e.date) + ' &middot; ' + esc(e.time) + '</span>' +
+        '<span class="je-mood">' + (e.mood || '🌸') + '</span>' +
+      '</div>' +
+      catHtml +
+      titleHtml +
+      '<p class="je-text">' + textHtml + '</p>' +
+      '<button class="je-delete" onclick="deleteEntry(' + e.id + ')">✕ Remove</button>' +
+    '</div>';
+  }).join('');
+}
+
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+renderVocab();
+renderJournal();
+
+/* ──────────── BOOK JOURNAL ──────────── */
+var bookLog = [];
+var bjRating = 0;
+var bjFeelings = [];
+
+(function initBookLog() {
+  try {
+    var b = localStorage.getItem('mays_booklog_v1');
+    if (b) bookLog = JSON.parse(b);
+  } catch(e) {}
+  renderBookLog();
+})();
+
+function persistBookLog() {
+  try { localStorage.setItem('mays_booklog_v1', JSON.stringify(bookLog)); } catch(e) {}
+}
+
+(function setupStars() {
+  var container = document.getElementById('bj-stars');
+  if (!container) return;
+  var stars = container.querySelectorAll('span');
+  stars.forEach(function(s) {
+    s.addEventListener('click', function() {
+      var v = parseInt(this.getAttribute('data-v'));
+      bjRating = (bjRating === v) ? 0 : v;
+      updateStarDisplay();
+    });
+    s.addEventListener('mouseenter', function() {
+      var v = parseInt(this.getAttribute('data-v'));
+      stars.forEach(function(st, i) { st.classList.toggle('lit', i < v); });
+    });
+    s.addEventListener('mouseleave', function() { updateStarDisplay(); });
+  });
+})();
+
+function updateStarDisplay() {
+  var stars = document.querySelectorAll('#bj-stars span');
+  stars.forEach(function(s, i) { s.classList.toggle('lit', i < bjRating); });
+}
+
+document.querySelectorAll('.bj-feeling-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var f = this.getAttribute('data-f');
+    var idx = bjFeelings.indexOf(f);
+    if (idx > -1) { bjFeelings.splice(idx, 1); this.classList.remove('selected'); }
+    else if (bjFeelings.length < 4) { bjFeelings.push(f); this.classList.add('selected'); }
+  });
+});
+
+function addBookEntry() {
+  var title = document.getElementById('bj-title').value.trim();
+  if (!title) { toast('Please enter a book title.'); return; }
+  var entry = {
+    id: Date.now(),
+    title: title,
+    author: document.getElementById('bj-author').value.trim(),
+    when: document.getElementById('bj-when').value.trim(),
+    genre: document.getElementById('bj-genre').value,
+    rating: bjRating,
+    feelings: bjFeelings.slice(),
+    thoughts: document.getElementById('bj-thoughts').value.trim(),
+    line: document.getElementById('bj-line').value.trim(),
+    reread: document.getElementById('bj-reread').checked,
+    saved: new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' })
+  };
+  bookLog.unshift(entry);
+  persistBookLog();
+  ['bj-title','bj-author','bj-when','bj-thoughts','bj-line'].forEach(function(id) { document.getElementById(id).value = ''; });
+  document.getElementById('bj-genre').value = '';
+  document.getElementById('bj-reread').checked = false;
+  bjRating = 0; updateStarDisplay();
+  bjFeelings = [];
+  document.querySelectorAll('.bj-feeling-btn').forEach(function(b) { b.classList.remove('selected'); });
+  renderBookLog();
+  toast('Added to your reading journal \u2736');
+}
+
+function deleteBookEntry(id) {
+  bookLog = bookLog.filter(function(e) { return e.id !== id; });
+  persistBookLog(); renderBookLog(); toast('Entry removed.');
+}
+
+function renderBookLog() {
+  var el = document.getElementById('bj-list');
+  var cnt = document.getElementById('bj-count');
+  var exportBar = document.getElementById('bj-export-bar');
+  if (!el) return;
+  if (bookLog.length === 0) {
+    if (cnt) cnt.textContent = '';
+    if (exportBar) exportBar.style.display = 'none';
+    el.innerHTML = '<div class="bj-empty"><p>Your reading journal is empty. Record the first book you\'ve loved.</p></div>';
+    return;
+  }
+  if (exportBar) exportBar.style.display = 'flex';
+  if (cnt) cnt.textContent = bookLog.length + (bookLog.length === 1 ? ' book recorded' : ' books recorded');
+  el.innerHTML = bookLog.map(function(e) {
+    var starsHtml = '';
+    if (e.rating) {
+      starsHtml = '<div class="bj-card-stars">';
+      for (var i = 1; i <= 5; i++) starsHtml += '<span class="' + (i <= e.rating ? 'lit' : '') + '">\u2605</span>';
+      starsHtml += '</div>';
+    }
+    var feelingsHtml = (e.feelings && e.feelings.length)
+      ? '<div class="bj-card-feelings">' + e.feelings.map(function(f) { return '<span class="bj-card-feeling">' + esc(f) + '</span>'; }).join('') + '</div>'
+      : '';
+    var thoughtsHtml = e.thoughts
+      ? '<div class="bj-card-thoughts"><p class="bj-card-thoughts-label">Thoughts</p><p class="bj-card-thoughts-text">' + esc(e.thoughts).replace(/\n/g,'<br>') + '</p></div>'
+      : '';
+    var lineHtml = e.line
+      ? '<div class="bj-card-line"><p class="bj-card-line-label">A line to remember</p><p class="bj-card-line-text">' + esc(e.line) + '</p></div>'
+      : '';
+    var genreHtml = e.genre ? '<span class="badge badge-cat" style="margin-bottom:0.6rem;display:inline-flex;">' + esc(e.genre) + '</span>' : '';
+    var rereadHtml = e.reread ? '<span class="bj-card-reread">\u2665 would re-read</span>' : '';
+    var dateHtml = '<span class="bj-card-date">' +
+      (e.when ? '<span class="bj-card-date-when">Read ' + esc(e.when) + '</span>' : '') +
+      '<span class="bj-card-date-saved">logged ' + esc(e.saved) + '</span>' +
+      '</span>';
+    return '<div class="bj-card"><div class="bj-card-accent"></div><div class="bj-card-inner">' +
+      '<div class="bj-card-header"><div class="bj-card-title-block"><p class="bj-card-book-title">' + esc(e.title) + '</p>' +
+      (e.author ? '<p class="bj-card-author">' + esc(e.author) + '</p>' : '') + '</div>' +
+      '<button class="bj-card-delete" onclick="deleteBookEntry(' + e.id + ')">Remove</button></div>' +
+      genreHtml + starsHtml + feelingsHtml + thoughtsHtml + lineHtml +
+      '<div class="bj-card-footer">' + dateHtml + rereadHtml + '</div>' +
+      '</div></div>';
+  }).join('');
+}
+/* ──────────── BACKUP ──────────── */
+function exportBackup() {
+  var data = {
+    version: 1,
+    exported: new Date().toISOString(),
+    vocabBank: vocabBank,
+    journalEntries: journalEntries,
+    bookLog: bookLog
+  };
+  var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'mays-carnet-backup-' + new Date().toISOString().slice(0,10) + '.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('Backup saved ✦');
+}
+
+function importBackup(event) {
+  var file = event.target.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      var data = JSON.parse(e.target.result);
+      if (!data.version) throw new Error('Invalid file');
+
+      // Merge — add entries that don't already exist (matched by id)
+      if (Array.isArray(data.vocabBank)) {
+        var existingVocabIds = vocabBank.map(function(w) { return w.id; });
+        data.vocabBank.forEach(function(w) {
+          if (!existingVocabIds.includes(w.id)) vocabBank.push(w);
+        });
+      }
+      if (Array.isArray(data.journalEntries)) {
+        var existingJournalIds = journalEntries.map(function(e) { return e.id; });
+        data.journalEntries.forEach(function(entry) {
+          if (!existingJournalIds.includes(entry.id)) journalEntries.push(entry);
+        });
+        journalEntries.sort(function(a,b) { return b.id - a.id; });
+      }
+      if (Array.isArray(data.bookLog)) {
+        var existingBookIds = bookLog.map(function(b) { return b.id; });
+        data.bookLog.forEach(function(b) {
+          if (!existingBookIds.includes(b.id)) bookLog.push(b);
+        });
+        bookLog.sort(function(a,b) { return b.id - a.id; });
+      }
+
+      persist();
+      persistBookLog();
+      renderVocab();
+      renderJournal();
+      renderBookLog();
+      toast('Backup imported ✦');
+    } catch(err) {
+      toast('Could not read that file — please use a backup exported from this app.');
+    }
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+}
+
+/* ──────────── PDF EXPORT ──────────── */
+function buildPrintTarget(html) {
+  document.getElementById('print-target').innerHTML = html;
+}
+
+function exportJournalPDF() {
+  var now = new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' });
+  var html = '<div class="print-cover">' +
+    '<p class="print-cover-eyebrow">May\'s French Carnet</p>' +
+    '<p class="print-cover-title">Mon Journal</p>' +
+    '<p class="print-cover-sub">Une langue, une âme</p>' +
+    '<p class="print-cover-date">Exported ' + now + '</p>' +
+    '</div>';
+
+  if (journalEntries.length === 0) {
+    html += '<p class="print-empty">No journal entries yet.</p>';
+  } else {
+    html += journalEntries.map(function(e) {
+      var catHtml = e.cat ? '<span class="print-entry-cat">' + esc(e.cat) + '</span><br>' : '';
+      var titleHtml = e.title ? '<p class="print-entry-title">' + esc(e.title) + '</p>' : '';
+      return '<div class="print-entry">' +
+        '<div class="print-entry-accent"></div>' +
+        '<div class="print-entry-meta">' +
+          '<span>' + esc(e.date) + ' &middot; ' + esc(e.time) + '</span>' +
+          '<span class="print-entry-mood">' + (e.mood || '') + '</span>' +
+        '</div>' +
+        catHtml + titleHtml +
+        '<p class="print-entry-text">' + esc(e.text).replace(/\n/g, '<br>') + '</p>' +
+        '</div>';
+    }).join('');
+  }
+
+  buildPrintTarget(html);
+  window.print();
+}
+
+function exportBooksPDF() {
+  var now = new Date().toLocaleDateString('en-GB', { day:'numeric', month:'long', year:'numeric' });
+  var html = '<div class="print-cover">' +
+    '<p class="print-cover-eyebrow">May\'s French Carnet</p>' +
+    '<p class="print-cover-title">Mon Carnet de Lecture</p>' +
+    '<p class="print-cover-sub">Books read &amp; remembered</p>' +
+    '<p class="print-cover-date">Exported ' + now + ' &nbsp;&middot;&nbsp; ' + bookLog.length + (bookLog.length === 1 ? ' book' : ' books') + '</p>' +
+    '</div>';
+
+  if (bookLog.length === 0) {
+    html += '<p class="print-empty">No books recorded yet.</p>';
+  } else {
+    html += bookLog.map(function(e) {
+      var stars = '';
+      if (e.rating) {
+        for (var i = 1; i <= 5; i++) stars += (i <= e.rating ? '\u2605' : '\u2606');
+      }
+      var feelingsText = (e.feelings && e.feelings.length) ? e.feelings.join(', ') : '';
+      return '<div class="print-entry">' +
+        '<div class="print-entry-accent"></div>' +
+        '<p class="print-book-title">' + esc(e.title) + '</p>' +
+        (e.author ? '<p class="print-book-author">' + esc(e.author) + '</p>' : '') +
+        (e.genre ? '<span class="print-book-genre">' + esc(e.genre) + '</span><br>' : '') +
+        (stars ? '<p class="print-book-stars">' + stars + '</p>' : '') +
+        (feelingsText ? '<p class="print-book-feelings">' + esc(feelingsText) + '</p>' : '') +
+        (e.thoughts ? '<p class="print-book-label">Thoughts</p><p class="print-book-thoughts">' + esc(e.thoughts).replace(/\n/g,'<br>') + '</p>' : '') +
+        (e.line ? '<p class="print-book-label">A line to remember</p><p class="print-book-line">' + esc(e.line) + '</p>' : '') +
+        '<div class="print-book-footer">' +
+          '<span>' + (e.when ? esc(e.when) + ' &middot; ' : '') + 'saved ' + esc(e.saved) + '</span>' +
+          (e.reread ? '<span class="print-book-reread">\u2665 would re-read</span>' : '') +
+        '</div>' +
+        '</div>';
+    }).join('');
+  }
+
+  buildPrintTarget(html);
+  window.print();
+}
+
+</script>
+<div id="print-target" style="display:none;"></div>
+</body>
+</html>
